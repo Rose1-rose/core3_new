@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FIELD MARKET</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HOME
+  ====================================================== -->
+
+  <section class="brand-page app-page" id="brandPage">
+    <header class="brand-page-header">
+      <div class="site-mark">FIELD MARKET<sup>®</sup></div>
+
+      <nav class="home-nav">
+        <button type="button" data-route="market">MARKET</button>
+        <button type="button" data-route="bounties">BOUNTIES</button>
+        <button type="button" data-route="postBounty">POST A BOUNTY</button>
+        <button type="button" data-route="discussion">DISCUSSION</button>
+      </nav>
+
+      <div class="site-code">FIELD MARKET / NYC</div>
+    </header>
+
+    <div class="brand-page-main">
+      <div class="brand-copy">
+        <div class="section-code">A MARKETPLACE FOR PHYSICAL PRESENCE</div>
+
+        <h1>FIELD<br>MARKET.</h1>
+
+        <h2>COLLECT THE CITY.<br>REQUEST THE MOMENT.</h2>
+
+        <p>
+          Existing field records can be collected. New moments can be commissioned
+          through bounties that require someone to physically go, do, document,
+          and verify.
+        </p>
+
+        <div class="home-action-grid">
+          <button class="home-action" type="button" data-route="market">
+            <span>01</span>
+            <strong>LIVE MARKET</strong>
+            <small>BROWSE URBAN MOMENTS</small>
+            <b>→</b>
+          </button>
+
+          <button class="home-action" type="button" data-route="bounties">
+            <span>02</span>
+            <strong>BOUNTIES</strong>
+            <small>BROWSE OPEN + COMPLETED TASKS</small>
+            <b>→</b>
+          </button>
+
+          <button class="home-action" type="button" data-route="postBounty">
+            <span>03</span>
+            <strong>POST A BOUNTY</strong>
+            <small>REQUEST A PHYSICAL TASK</small>
+            <b>→</b>
+          </button>
+
+          <button class="home-action" type="button" data-route="discussion">
+            <span>04</span>
+            <strong>LIVE DISCUSSION</strong>
+            <small>MARKET ITEMS + BOUNTIES</small>
+            <b>→</b>
+          </button>
+        </div>
+      </div>
+
+      <div class="brand-visual">
+        <div class="drop-card">
+          <div class="drop-card-top">
+            <span>FIELD STATUS</span>
+            <span class="drop-live">LIVE</span>
+          </div>
+
+          <div class="drop-card-main">
+            <div class="drop-card-number">12</div>
+            <div class="drop-card-title">FIELD<br>RECORDS<br>AVAILABLE</div>
+          </div>
+
+          <div class="drop-card-price">
+            <span>BOUNTY BOARD</span>
+            <strong id="homeBountyCount">07</strong>
+          </div>
+
+          <div class="drop-card-bottom">
+            <span>FIELD MARKET / NYC</span>
+            <span class="drop-edition">COLLECT / REQUEST / VERIFY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="brand-page-footer">
+      <span>COLLECT</span><span>→</span>
+      <span>REQUEST</span><span>→</span>
+      <span>GO</span><span>→</span>
+      <span>PROVE</span><span>→</span>
+      <span>FULFILL</span>
+    </footer>
+  </section>
+
+
+  <!-- =====================================================
+       LIVE MARKET
+  ====================================================== -->
+
+  <main class="market-page app-page hidden" id="marketPage">
+    <header class="market-header">
+      <button class="back-button" type="button" data-route="home">
+        <span>←</span> FIELD MARKET
+      </button>
+
+      <div class="market-logo">
+        <div>FIELD<br>MARKET<sup>®</sup></div>
+        <small>LIVE MARKET / NYC</small>
+      </div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="bounties">BOUNTIES</button>
+        <button class="text-nav-button" type="button" data-route="postBounty">POST</button>
+        <button class="text-nav-button" type="button" data-route="discussion">DISCUSSION</button>
+        <button class="cart-button" id="cartButton" type="button">
+          CART <span id="cartCount">00</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="market-status">
+      <div>
+        <div class="tiny-label">time remaining</div>
+        <div class="countdown">
+          <span id="hours">23</span><b>:</b>
+          <span id="minutes">59</span><b>:</b>
+          <span id="seconds">58</span>
+          <small id="frames">24</small>
+        </div>
+      </div>
+
+      <div class="live-indicator">
+        <span class="live-dot"></span>
+        <span id="activityText">LIVE MARKET — 12 FIELD RECORDS AVAILABLE</span>
+      </div>
+    </section>
+
+    <section class="stage" id="stage">
+      <div class="stage-note">drag / scroll to browse · click to inspect</div>
+
+      <div class="ring-wrap">
+        <div class="ring" id="ring"></div>
+      </div>
+
+      <div class="focus-panel">
+        <div class="focus-category" id="focusCategory">PLACE</div>
+        <div class="focus-id" id="focusId">#0501</div>
+        <h2 class="focus-title" id="focusTitle">FLATIRON AFTER DARK</h2>
+
+        <div class="focus-meta">
+          <span id="focusPrice">$22.00</span>
+          <span id="focusCount">01 / 12</span>
+        </div>
+
+        <button class="inspect-button" id="inspectButton" type="button">
+          VIEW FIELD RECORD <span>↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="drop-footer">
+      <div>
+        <div class="tiny-label">next drop</div>
+        <div class="next-drop-time">15:00 pm</div>
+      </div>
+
+      <div class="drop-description">
+        <strong>LIMITED FIELD RECORDS</strong>
+        <span>COLLECTED FROM PHYSICAL LIFE</span>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- =====================================================
+       MARKET ITEM DETAIL
+  ====================================================== -->
+
+  <section class="product-page app-page hidden" id="productPage">
+    <header class="product-header">
+      <button class="back-button" type="button" data-route="market">
+        <span>←</span> LIVE MARKET
+      </button>
+
+      <div class="product-header-center" id="productHeaderCenter">
+        FIELD MARKET / FIELD RECORD
+      </div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="bounties">BOUNTIES</button>
+        <button class="text-nav-button" type="button" data-route="discussion">DISCUSSION</button>
+        <button class="cart-button" id="productCartButton" type="button">
+          CART <span id="productCartCount">00</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="product-layout">
+      <div class="product-image-panel">
+        <img id="productImage" alt="Selected field record">
+        <div class="product-image-tag">PHYSICAL MOMENT / DIGITAL RECORD</div>
+      </div>
+
+      <div class="product-info-panel">
+        <div class="product-topline">
+          <span id="productCategory">PLACE</span>
+          <span class="product-status" id="productStatus">AVAILABLE</span>
+        </div>
+
+        <div class="product-id" id="productId">#0501</div>
+        <h1 id="productTitle">FLATIRON AFTER DARK</h1>
+        <div class="product-price" id="productPrice">$22.00</div>
+
+        <p class="product-description" id="productDescription"></p>
+
+        <div class="product-edition-row">
+          <span>FIELD RECORD</span>
+          <span>EDITION 1 / 1</span>
+        </div>
+
+        <dl class="product-metadata">
+          <div><dt>LOCATION</dt><dd id="productLocation"></dd></div>
+          <div><dt>TYPE</dt><dd id="productType"></dd></div>
+          <div><dt>DATE</dt><dd id="productDate"></dd></div>
+          <div><dt>CONTEXT</dt><dd id="productContext"></dd></div>
+          <div><dt>VIEWS</dt><dd id="productViews"></dd></div>
+        </dl>
+
+        <div class="product-actions">
+          <button class="watch-button" id="watchButton" type="button">WATCH</button>
+          <button class="add-cart-button" id="addToCartButton" type="button">ADD TO CART</button>
+        </div>
+
+        <div class="product-message" id="productMessage"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       BOUNTY BOARD
+  ====================================================== -->
+
+  <section class="bounty-page app-page hidden" id="bountyPage">
+    <header class="page-header">
+      <button class="back-button" type="button" data-route="home">
+        <span>←</span> FIELD MARKET
+      </button>
+
+      <div class="page-logo">BOUNTY<br>BOARD<sup>®</sup></div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="market">MARKET</button>
+        <button class="text-nav-button" type="button" data-route="discussion">DISCUSSION</button>
+        <button class="accent-header-button" type="button" data-route="postBounty">POST A BOUNTY +</button>
+      </div>
+    </header>
+
+    <section class="bounty-hero">
+      <div>
+        <div class="tiny-label">PHYSICAL TASKS / NYC + BEYOND</div>
+        <h1>GO THERE.<br>BRING BACK PROOF.</h1>
+      </div>
+
+      <div class="bounty-hero-copy">
+        <p>
+          Browse requests at different stages: waiting for a runner, currently
+          being completed, waiting for approval, or already fulfilled.
+        </p>
+
+        <div class="bounty-board-counts">
+          <div><span>OPEN</span><strong id="openCount">00</strong></div>
+          <div><span>ACTIVE</span><strong id="activeCount">00</strong></div>
+          <div><span>FULFILLED</span><strong id="fulfilledCount">00</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bounty-filter-bar">
+      <button class="bounty-filter active" type="button" data-filter="ALL">ALL</button>
+      <button class="bounty-filter" type="button" data-filter="OPEN">OPEN</button>
+      <button class="bounty-filter" type="button" data-filter="IN PROGRESS">IN PROGRESS</button>
+      <button class="bounty-filter" type="button" data-filter="WAITING APPROVAL">WAITING APPROVAL</button>
+      <button class="bounty-filter" type="button" data-filter="FULFILLED">FULFILLED</button>
+    </section>
+
+    <section class="bounty-grid" id="bountyGrid"></section>
+  </section>
+
+
+  <!-- =====================================================
+       BOUNTY DETAIL
+  ====================================================== -->
+
+  <section class="bounty-detail-page app-page hidden" id="bountyDetailPage">
+    <header class="product-header">
+      <button class="back-button" type="button" data-route="bounties">
+        <span>←</span> BOUNTIES
+      </button>
+
+      <div class="product-header-center">FIELD MARKET / BOUNTY</div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="market">MARKET</button>
+        <button class="text-nav-button" type="button" data-route="postBounty">POST</button>
+        <button class="text-nav-button" type="button" data-route="discussion">DISCUSSION</button>
+      </div>
+    </header>
+
+    <div class="bounty-detail-layout">
+      <div class="bounty-media-panel">
+        <section class="bounty-media-block" id="noPublicImageBlock">
+          <div class="no-reference">
+            <span id="noImageStatus">NO IMAGE YET</span>
+            <strong id="noImageMessage">THE IMAGE APPEARS ONLY AFTER THE BOUNTY IS FULFILLED.</strong>
+          </div>
+        </section>
+
+        <section class="bounty-media-block hidden" id="fulfilledProofBlock">
+          <div class="media-heading">
+            <span>FULFILLED / FINAL PROOF</span>
+            <small>VERIFIED FIELD SUBMISSION</small>
+          </div>
+
+          <div class="bounty-image-frame proof-frame">
+            <img id="fulfilledProofImage" alt="Fulfilled bounty proof">
+            <div class="reference-label proof-label">PROOF VERIFIED / PUBLIC RESULT</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="bounty-info-panel">
+        <div class="product-topline">
+          <span id="bountyRoleLabel">BOUNTY REQUEST</span>
+          <span class="bounty-status" id="bountyDetailStatus">OPEN</span>
+        </div>
+
+        <div class="product-id" id="bountyDetailId">#B031</div>
+        <h1 id="bountyDetailTitle">TIMES SQUARE FAN CHECK-IN</h1>
+
+        <div class="bounty-reward">
+          <span>REWARD</span>
+          <strong id="bountyDetailReward">$18.00</strong>
+        </div>
+
+        <dl class="bounty-task-list">
+          <div><dt>WHAT</dt><dd id="bountyDetailWhat"></dd></div>
+          <div><dt>WHERE</dt><dd id="bountyDetailWhere"></dd></div>
+          <div><dt>WHEN</dt><dd id="bountyDetailWhen"></dd></div>
+          <div><dt>PROOF</dt><dd id="bountyDetailProof"></dd></div>
+          <div><dt>POSTED BY</dt><dd id="bountyDetailOwner"></dd></div>
+        </dl>
+
+        <div class="bounty-action-area" id="bountyActionArea">
+          <button class="take-bounty-button" id="takeBountyButton" type="button">
+            TAKE BOUNTY <span>→</span>
+          </button>
+        </div>
+
+        <section class="mission-panel hidden" id="missionPanel">
+          <div class="mission-panel-head">
+            <span>RUNNER FLOW</span>
+            <strong id="missionStateLabel">MISSION ACCEPTED</strong>
+          </div>
+
+          <div class="mission-steps">
+            <div class="mission-step" id="missionStepTake">
+              <span>01</span>
+              <div>
+                <strong>TAKE BOUNTY</strong>
+                <small>Task assigned to runner.</small>
+              </div>
+            </div>
+
+            <div class="mission-step" id="missionStepLocation">
+              <span>02</span>
+              <div>
+                <strong>GO TO LOCATION</strong>
+                <small>Physically arrive at the requested place.</small>
+              </div>
+            </div>
+
+            <div class="mission-step" id="missionStepComplete">
+              <span>03</span>
+              <div>
+                <strong>COMPLETE TASK</strong>
+                <small>Perform the requested action.</small>
+              </div>
+            </div>
+
+            <div class="mission-step" id="missionStepProof">
+              <span>04</span>
+              <div>
+                <strong>UPLOAD PROOF</strong>
+                <small>Submit evidence from the field.</small>
+              </div>
+            </div>
+
+            <div class="mission-step" id="missionStepApproval">
+              <span>05</span>
+              <div>
+                <strong>APPROVED / GET PAID</strong>
+                <small>Requester verifies proof and releases reward.</small>
+              </div>
+            </div>
+          </div>
+
+          <button class="flow-button" id="arriveButton" type="button">
+            SIMULATE ARRIVAL AT LOCATION →
+          </button>
+
+          <button class="flow-button hidden" id="completeTaskButton" type="button">
+            MARK TASK COMPLETE →
+          </button>
+
+          <div class="upload-zone hidden" id="uploadZone">
+            <label class="proof-upload-label" for="bountyUpload">
+              <span>UPLOAD PHOTO / VIDEO PROOF</span>
+              <strong>CHOOSE FILE +</strong>
+            </label>
+
+            <input class="proof-upload-input" id="bountyUpload" type="file" accept="image/*,video/*">
+
+            <div class="proof-preview hidden" id="proofPreview">
+              <img id="proofPreviewImage" alt="Proof preview">
+            </div>
+
+            <button class="submit-proof-button" id="submitProofButton" type="button" disabled>
+              SUBMIT PROOF →
+            </button>
+          </div>
+        </section>
+
+        <section class="requester-review hidden" id="requesterReview">
+          <div class="review-head">
+            <span>REQUESTER FLOW</span>
+            <strong>PRIVATE PROOF REVIEW</strong>
+          </div>
+
+          <p>
+            The runner submitted proof. This preview is visible to the requester
+            for approval, but it does not become a public bounty image until the
+            bounty is fulfilled.
+          </p>
+
+          <div class="private-proof-preview hidden" id="privateProofPreview">
+            <img id="privateProofImage" alt="Private submitted proof">
+            <span>PRIVATE / WAITING FOR APPROVAL</span>
+          </div>
+
+          <button class="approve-proof-button" id="approveProofButton" type="button">
+            APPROVE PROOF + RELEASE PAYMENT →
+          </button>
+        </section>
+
+        <section class="fulfilled-panel hidden" id="fulfilledPanel">
+          <div class="fulfilled-mark">✓</div>
+          <div>
+            <span>BOUNTY FULFILLED</span>
+            <strong id="paidLabel">$0.00 PAID</strong>
+            <small>PROOF VERIFIED / REQUEST COMPLETE</small>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       POST A BOUNTY
+  ====================================================== -->
+
+  <section class="post-bounty-page app-page hidden" id="postBountyPage">
+    <header class="product-header">
+      <button class="back-button" type="button" data-route="home">
+        <span>←</span> FIELD MARKET
+      </button>
+
+      <div class="product-header-center">FIELD MARKET / POST A BOUNTY</div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="bounties">BOUNTIES</button>
+        <button class="text-nav-button" type="button" data-route="market">MARKET</button>
+      </div>
+    </header>
+
+    <div class="post-bounty-layout">
+      <div class="post-bounty-intro">
+        <div class="tiny-label">REQUESTER FLOW / CREATE A TASK</div>
+        <h1>POST<br>A BOUNTY.</h1>
+
+        <p>
+          A strong bounty tells the runner what to do, where to go, when it
+          matters, how much it pays, and what counts as proof.
+        </p>
+
+        <div class="post-flow-note">
+          <span>01 ADD DETAILS</span>
+          <span>02 PUBLISH</span>
+          <span>03 WAIT FOR RUNNER</span>
+          <span>04 REVIEW PROOF</span>
+          <span>05 APPROVE</span>
+        </div>
+      </div>
+
+      <form class="bounty-form" id="bountyForm">
+        <label>
+          <span>TASK TITLE</span>
+          <input id="newBountyTitle" type="text" required placeholder="TIMES SQUARE FAN CHECK-IN">
+        </label>
+
+        <label>
+          <span>WHAT SHOULD THE RUNNER DO?</span>
+          <textarea id="newBountyWhat" required placeholder="Describe the physical action..."></textarea>
+        </label>
+
+        <div class="form-two-column">
+          <label>
+            <span>WHERE?</span>
+            <input id="newBountyWhere" type="text" required placeholder="Times Square, NYC">
+          </label>
+
+          <label>
+            <span>WHEN?</span>
+            <input id="newBountyWhen" type="text" required placeholder="Oct 18 / 8:00–8:15 PM">
+          </label>
+        </div>
+
+        <div class="form-two-column">
+          <label>
+            <span>REWARD ($)</span>
+            <input id="newBountyReward" type="number" min="1" step="0.5" required placeholder="18">
+          </label>
+
+          <label>
+            <span>PROOF REQUIRED</span>
+            <input id="newBountyProof" type="text" required placeholder="One clear photo showing the requested moment">
+          </label>
+        </div>
+
+
+        <button class="publish-bounty-button" type="submit">
+          PUBLISH BOUNTY <span>→</span>
+        </button>
+
+        <div class="form-message" id="postFormMessage"></div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       LIVE DISCUSSION
+  ====================================================== -->
+
+  <section class="discussion-page app-page hidden" id="discussionPage">
+    <header class="page-header">
+      <button class="back-button" type="button" data-route="home">
+        <span>←</span> FIELD MARKET
+      </button>
+
+      <div class="page-logo">LIVE<br>DISCUSSION<sup>®</sup></div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="market">MARKET</button>
+        <button class="text-nav-button" type="button" data-route="bounties">BOUNTIES</button>
+        <button class="text-nav-button" type="button" data-route="postBounty">POST</button>
+      </div>
+    </header>
+
+    <section class="discussion-main">
+      <div class="discussion-title-row">
+        <div>
+          <div class="tiny-label">FIELD NETWORK / CURRENT ACTIVITY</div>
+          <h1>WHAT'S HAPPENING?</h1>
+        </div>
+
+        <div class="discussion-online">
+          <span class="discussion-online-dot"></span>
+          <span id="discussionOnlineCount">18 ONLINE</span>
+        </div>
+      </div>
+
+      <div class="discussion-feed" id="discussionFeed"></div>
+
+      <form class="discussion-form" id="discussionForm">
+        <div class="discussion-input-wrap">
+          <span class="discussion-you">YOU</span>
+          <input id="discussionInput" type="text" maxlength="140" autocomplete="off" placeholder="TYPE A MESSAGE...">
+        </div>
+
+        <button class="discussion-send" type="submit">
+          SEND <span>→</span>
+        </button>
+      </form>
+    </section>
+  </section>
+
+
+  <!-- =====================================================
+       CART
+  ====================================================== -->
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <header class="cart-header">
+      <div>
+        <div class="tiny-label">FIELD MARKET</div>
+        <h2>YOUR CART</h2>
+      </div>
+
+      <button class="cart-close" id="cartClose" type="button">×</button>
+    </header>
+
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">YOUR CART IS EMPTY.</div>
+
+    <footer class="cart-footer">
+      <div class="cart-subtotal">
+        <span>SUBTOTAL</span>
+        <strong id="cartSubtotal">$0.00</strong>
+      </div>
+
+      <button class="checkout-button" id="checkoutButton" type="button">
+        CHECKOUT <span>→</span>
+      </button>
+    </footer>
+  </aside>
+
+
+  <!-- =====================================================
+       CHECKOUT
+  ====================================================== -->
+
+  <section class="checkout-page" id="checkoutPage">
+    <div class="checkout-card">
+      <button class="checkout-back" id="checkoutBack" type="button">
+        ← BACK TO CART
+      </button>
+
+      <div class="checkout-heading">
+        <div class="tiny-label dark-label">FIELD MARKET</div>
+        <h2>CHECKOUT</h2>
+      </div>
+
+      <div class="checkout-grid">
+        <div><span>RECORDS</span><strong id="checkoutQuantity">0</strong></div>
+        <div><span>DELIVERY</span><strong>DIGITAL</strong></div>
+        <div><span>TOTAL</span><strong id="checkoutTotal">$0.00</strong></div>
+      </div>
+
+      <p class="checkout-note">
+        Prototype transaction. Purchased field records are marked as sold.
+      </p>
+
+      <button class="complete-purchase-button" id="completePurchaseButton" type="button">
+        COMPLETE PURCHASE
+      </button>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       PURCHASE COMPLETE
+  ====================================================== -->
+
+  <section class="complete-page" id="completePage">
+    <div>
+      <div class="complete-label">FIELD MARKET / RECEIPT</div>
+      <h2>PURCHASE<br>COMPLETE.</h2>
+      <p id="completeText">YOUR FIELD RECORD HAS BEEN ADDED TO YOUR ARCHIVE.</p>
+
+      <button id="returnToMarket" type="button">
+        RETURN TO MARKET <span>→</span>
+      </button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
