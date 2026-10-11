@@ -2318,3 +2318,290 @@ img {
     font-size: 6px;
   }
 }
+
+/* =====================================================
+   PREMIUM INTERACTION PASS
+===================================================== */
+
+/* No permanent yellow home tile: yellow is reserved for hover / active feedback. */
+.home-action-primary {
+  background: transparent;
+  color: var(--white);
+}
+
+.home-action-primary span,
+.home-action-primary small {
+  color: var(--grey);
+}
+
+.home-action-primary b {
+  color: var(--lemon);
+}
+
+.home-action,
+.home-action b,
+.drop-card,
+.drop-card-main,
+.drop-card-price,
+.drop-card-bottom,
+.bounty-card,
+.bounty-card-arrow,
+.inspect-button span,
+.primary-entry-button span,
+.secondary-entry-button span {
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease,
+    filter 220ms ease;
+}
+
+.home-action:hover {
+  transform: translateY(-2px);
+}
+
+.home-action:hover b {
+  transform: translateX(5px);
+}
+
+.home-action.is-previewing {
+  background: var(--lemon);
+  color: var(--night);
+}
+
+.home-action.is-previewing span,
+.home-action.is-previewing small,
+.home-action.is-previewing b {
+  color: var(--night);
+}
+
+.drop-card {
+  transform: translateZ(0);
+}
+
+.drop-card.preview-shift {
+  transform: translateY(-5px) rotate(-0.35deg);
+}
+
+.drop-card.is-updating .drop-card-main,
+.drop-card.is-updating .drop-card-price,
+.drop-card.is-updating .drop-card-bottom {
+  opacity: 0.18;
+  transform: translateY(6px);
+  filter: blur(2px);
+}
+
+/* Small status animations: information feels live without filling the UI with color. */
+.status-progress::before {
+  animation: statusPulse 1.4s ease-in-out infinite;
+}
+
+.status-waiting::before {
+  animation: statusBlink 1.05s steps(2, end) infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 0.25;
+    box-shadow: 0 0 0 0 rgba(245, 245, 239, 0);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 5px rgba(245, 245, 239, 0.08);
+  }
+}
+
+@keyframes statusBlink {
+  0%, 45% {
+    opacity: 1;
+  }
+
+  46%, 100% {
+    opacity: 0.2;
+  }
+}
+
+.bounty-card {
+  transition:
+    transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.bounty-card:hover {
+  transform: translateX(7px);
+  background: rgba(245, 245, 239, 0.018);
+}
+
+.bounty-card:hover .bounty-card-arrow {
+  transform: translateX(4px);
+}
+
+.inspect-button:hover span,
+.primary-entry-button:hover span,
+.secondary-entry-button:hover span {
+  display: inline-block;
+  transform: translateX(4px);
+}
+
+/* Fulfilled proof reads like an archive record rather than a generic gallery image. */
+.proof-archive-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-left: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+}
+
+.proof-archive-meta > div {
+  min-height: 76px;
+  padding: 13px 12px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.proof-archive-meta span {
+  display: block;
+  color: var(--grey);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.13em;
+}
+
+.proof-archive-meta strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  line-height: 1.25;
+  letter-spacing: 0.07em;
+}
+
+.proof-archive-meta > div:nth-child(3) strong {
+  color: var(--rose);
+}
+
+/* Page transition: brief routing layer, intentionally restrained. */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  padding: 28px 40px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--night);
+  color: var(--white);
+  pointer-events: none;
+  transform: translateY(101%);
+  will-change: transform;
+}
+
+.page-transition.show {
+  animation: routeIn 360ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.page-transition.exit {
+  animation: routeOut 400ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.transition-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--grey);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.transition-line {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 50%;
+  height: 1px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.transition-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--lemon);
+  transform: translateX(-100%);
+}
+
+.page-transition.show .transition-line::after {
+  animation: routeScan 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.transition-label {
+  max-width: 900px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(72px, 13vw, 190px);
+  font-weight: 700;
+  line-height: 0.75;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+
+@keyframes routeIn {
+  from {
+    transform: translateY(101%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes routeOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-101%);
+  }
+}
+
+@keyframes routeScan {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .page-transition.show,
+  .page-transition.exit,
+  .status-progress::before,
+  .status-waiting::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .proof-archive-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page-transition {
+    padding: 22px 20px 26px;
+  }
+
+  .transition-line {
+    left: 20px;
+    right: 20px;
+  }
+}

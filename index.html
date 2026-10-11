@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FIELD MARKET</title>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -74,25 +74,25 @@
       </div>
 
       <div class="brand-visual">
-        <div class="drop-card">
+        <div class="drop-card" id="homeStatusCard">
           <div class="drop-card-top">
-            <span>FIELD STATUS</span>
-            <span class="drop-live">LIVE</span>
+            <span id="homeStatusKicker">FIELD STATUS</span>
+            <span class="drop-live" id="homeStatusLive">LIVE</span>
           </div>
 
           <div class="drop-card-main">
-            <div class="drop-card-number">12</div>
-            <div class="drop-card-title">FIELD<br>RECORDS<br>AVAILABLE</div>
+            <div class="drop-card-number" id="homeStatusNumber">12</div>
+            <div class="drop-card-title" id="homeStatusTitle">FIELD<br>RECORDS<br>AVAILABLE</div>
           </div>
 
           <div class="drop-card-price">
-            <span>BOUNTY BOARD</span>
-            <strong id="homeBountyCount">07</strong>
+            <span id="homeStatusLabel">BOUNTY BOARD</span>
+            <strong id="homeBountyCount">06</strong>
           </div>
 
           <div class="drop-card-bottom">
-            <span>FIELD MARKET / NYC</span>
-            <span class="drop-edition">COLLECT / REQUEST / VERIFY</span>
+            <span id="homeStatusFooter">FIELD MARKET / NYC</span>
+            <span class="drop-edition" id="homeStatusEdition">COLLECT / REQUEST / VERIFY</span>
           </div>
         </div>
       </div>
@@ -340,6 +340,25 @@
           <div class="bounty-image-frame proof-frame">
             <img id="fulfilledProofImage" alt="Fulfilled bounty proof">
             <div class="reference-label proof-label">PROOF VERIFIED / PUBLIC RESULT</div>
+          </div>
+
+          <div class="proof-archive-meta">
+            <div>
+              <span>REQUEST</span>
+              <strong id="archiveRequestId">#B031</strong>
+            </div>
+            <div>
+              <span>SUBMITTED BY</span>
+              <strong id="archiveRunner">@RUNNER</strong>
+            </div>
+            <div>
+              <span>VERIFICATION</span>
+              <strong>APPROVED</strong>
+            </div>
+            <div>
+              <span>PAYOUT</span>
+              <strong id="archivePayout">$18.00</strong>
+            </div>
           </div>
         </section>
       </div>
@@ -691,6 +710,16 @@
       </button>
     </div>
   </section>
+
+
+  <div class="page-transition" id="pageTransition" aria-hidden="true">
+    <div class="transition-top">
+      <span>FIELD MARKET / ROUTING</span>
+      <span>NYC</span>
+    </div>
+    <div class="transition-line"></div>
+    <div class="transition-label" id="transitionLabel">LIVE MARKET</div>
+  </div>
 
   <script src="script.js"></script>
 </body>

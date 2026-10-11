@@ -177,6 +177,7 @@ let bounties = [
     what: "Go to Times Square during the scheduled billboard display. Hold the requester’s fan ID or photo in front of the screen and take one clear photo.",
     proof: "Fan ID and billboard must both be visible in one clear photo.",
     owner: "@lin24",
+    runner: "@runner17",
     proofImage: "assets/proof_times_square.png",
     pendingProofImage: "",
     status: "FULFILLED",
@@ -191,6 +192,7 @@ let bounties = [
     what: "Visit the T. rex display and document it from the requested low-angle position.",
     proof: "One clear photo from the requested viewpoint.",
     owner: "@noah",
+    runner: "@alex.nyc",
     proofImage: "assets/proof_trex.jpg",
     pendingProofImage: "",
     status: "FULFILLED",
@@ -205,6 +207,7 @@ let bounties = [
     what: "Document the main street during rain to verify the requested weather condition and street atmosphere.",
     proof: "One street-wide image showing wet pavement and the surrounding block.",
     owner: "@emily",
+    runner: "@fieldwalker",
     proofImage: "assets/proof_rain.jpg",
     pendingProofImage: "",
     status: "FULFILLED",
@@ -247,6 +250,7 @@ let bounties = [
     what: "Return to the requested river location and document what the same view looks like at sunset today.",
     proof: "One wide photo showing the river edge, skyline, and current light conditions.",
     owner: "@daniel",
+    runner: "@runner04",
     proofImage: "",
     pendingProofImage: "",
     status: "IN PROGRESS",
@@ -285,9 +289,20 @@ function twoDigits(value) {
   return String(value).padStart(2, "0");
 }
 
-function showPage(name) {
-  closeCart();
+const routeLabels = {
+  home: "FIELD MARKET",
+  market: "LIVE MARKET",
+  product: "FIELD RECORD",
+  bounties: "BOUNTY BOARD",
+  bountyDetail: "BOUNTY DETAIL",
+  postBounty: "POST A BOUNTY",
+  discussion: "LIVE DISCUSSION"
+};
 
+let routeTimerA = null;
+let routeTimerB = null;
+
+function switchPageNow(name) {
   Object.values(pages).forEach(page => page.classList.add("hidden"));
   pages[name].classList.remove("hidden");
 
@@ -298,9 +313,166 @@ function showPage(name) {
   if (name === "discussion") renderDiscussion();
 }
 
+function showPage(name, options = {}) {
+  closeCart();
+
+  const reducedMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (options.instant || reducedMotion) {
+    switchPageNow(name);
+    return;
+  }
+
+  const overlay = $("#pageTransition");
+  const label = $("#transitionLabel");
+
+  if (!overlay || !label) {
+    switchPageNow(name);
+    return;
+  }
+
+  clearTimeout(routeTimerA);
+  clearTimeout(routeTimerB);
+
+  label.textContent = routeLabels[name] || "FIELD MARKET";
+
+  overlay.classList.remove("exit", "show");
+  void overlay.offsetWidth;
+  overlay.classList.add("show");
+
+  routeTimerA = setTimeout(() => {
+    switchPageNow(name);
+
+    overlay.classList.remove("show");
+    overlay.classList.add("exit");
+  }, 340);
+
+  routeTimerB = setTimeout(() => {
+    overlay.classList.remove("exit");
+  }, 780);
+}
+
 $$("[data-route]").forEach(button => {
   button.addEventListener("click", () => {
     showPage(button.dataset.route);
+  });
+});
+
+/* =====================================================
+   HOME — LIVE STATUS PREVIEW
+===================================================== */
+
+const homeStatusPresets = {
+  market: () => ({
+    kicker: "LIVE MARKET / CURRENT DROP",
+    live: "LIVE",
+    number: String(marketItems.length).padStart(2, "0"),
+    title: "FIELD<br>RECORDS<br>AVAILABLE",
+    label: "FIELD RECORDS IN DROP",
+    value: String(marketItems.length).padStart(2, "0"),
+    footer: "FIELD MARKET / NYC",
+    edition: "COLLECT / ARCHIVE / ACQUIRE"
+  }),
+
+  bounties: () => {
+    const open = bounties.filter(item => item.status === "OPEN").length;
+    const active = bounties.filter(
+      item => item.status === "IN PROGRESS" || item.status === "WAITING APPROVAL"
+    ).length;
+
+    return {
+      kicker: "BOUNTY BOARD / LIVE STATUS",
+      live: "UPDATED",
+      number: String(open).padStart(2, "0"),
+      title: "OPEN<br>BOUNTIES<br>NOW",
+      label: "ACTIVE IN FIELD",
+      value: String(active).padStart(2, "0"),
+      footer: "FIELD MARKET / BOUNTIES",
+      edition: "TAKE / GO / PROVE / GET PAID"
+    };
+  },
+
+  postBounty: () => ({
+    kicker: "REQUESTER MODE",
+    live: "READY",
+    number: "+",
+    title: "POST<br>A NEW<br>BOUNTY",
+    label: "WORKFLOW",
+    value: "05 STEPS",
+    footer: "FIELD MARKET / REQUEST",
+    edition: "WHAT / WHERE / WHEN / REWARD / PROOF"
+  }),
+
+  discussion: () => ({
+    kicker: "FIELD NETWORK / LIVE",
+    live: "ONLINE",
+    number: "18",
+    title: "PEOPLE<br>ONLINE<br>NOW",
+    label: "CURRENT CHANNEL",
+    value: "LIVE",
+    footer: "FIELD MARKET / NETWORK",
+    edition: "MARKET ITEMS + BOUNTIES"
+  })
+};
+
+function getHomeDefaultPreset() {
+  return {
+    kicker: "FIELD STATUS",
+    live: "LIVE",
+    number: "12",
+    title: "FIELD<br>RECORDS<br>AVAILABLE",
+    label: "BOUNTY BOARD",
+    value: String(bounties.length).padStart(2, "0"),
+    footer: "FIELD MARKET / NYC",
+    edition: "COLLECT / REQUEST / VERIFY"
+  };
+}
+
+function applyHomeStatusPreset(preset) {
+  const card = $("#homeStatusCard");
+  if (!card) return;
+
+  card.classList.add("is-updating");
+
+  setTimeout(() => {
+    $("#homeStatusKicker").textContent = preset.kicker;
+    $("#homeStatusLive").textContent = preset.live;
+    $("#homeStatusNumber").textContent = preset.number;
+    $("#homeStatusTitle").innerHTML = preset.title;
+    $("#homeStatusLabel").textContent = preset.label;
+    $("#homeBountyCount").textContent = preset.value;
+    $("#homeStatusFooter").textContent = preset.footer;
+    $("#homeStatusEdition").textContent = preset.edition;
+
+    card.classList.remove("is-updating");
+  }, 70);
+}
+
+$$(".home-action").forEach(button => {
+  button.addEventListener("mouseenter", () => {
+    const route = button.dataset.route;
+    const presetFactory = homeStatusPresets[route];
+
+    $$(".home-action").forEach(item => {
+      item.classList.toggle("is-previewing", item === button);
+    });
+
+    $("#homeStatusCard")?.classList.add("preview-shift");
+
+    if (presetFactory) {
+      applyHomeStatusPreset(presetFactory());
+    }
+  });
+
+  button.addEventListener("mouseleave", () => {
+    $$(".home-action").forEach(item => {
+      item.classList.remove("is-previewing");
+    });
+
+    $("#homeStatusCard")?.classList.remove("preview-shift");
+    applyHomeStatusPreset(getHomeDefaultPreset());
   });
 });
 
@@ -896,6 +1068,10 @@ function renderBountyMedia(bounty) {
   if (isFulfilled) {
     $("#fulfilledProofImage").src = bounty.proofImage;
     $("#fulfilledProofImage").alt = `${bounty.title} fulfilled proof`;
+
+    $("#archiveRequestId").textContent = bounty.id;
+    $("#archiveRunner").textContent = bounty.runner || "@FIELD_RUNNER";
+    $("#archivePayout").textContent = money(bounty.reward);
   } else {
     $("#fulfilledProofImage").removeAttribute("src");
 
@@ -1016,6 +1192,10 @@ $("#takeBountyButton").addEventListener("click", () => {
 
   bounty.status = "IN PROGRESS";
   bounty.missionStage = 1;
+
+  if (!bounty.runner) {
+    bounty.runner = "@YOU";
+  }
 
   addDiscussionMessage({
     user: "SYSTEM",
