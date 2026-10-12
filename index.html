@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FIELD MARKET</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=pixel-serif-final">
 </head>
 
 <body>
@@ -31,8 +34,12 @@
     <div class="brand-page-main">
       <div class="brand-copy">
         <div class="section-code">A MARKETPLACE FOR PHYSICAL PRESENCE</div>
+        <div class="home-type-line" id="homeTypeLine" data-text="READING THE CITY SURFACE..."></div>
 
-        <h1>FIELD<br>MARKET.</h1>
+        <h1>
+          <span class="hero-field">FIELD</span><br>
+          <span class="hero-market">MARKET.</span>
+        </h1>
 
         <h2>COLLECT THE CITY.<br>REQUEST THE MOMENT.</h2>
 
@@ -41,6 +48,11 @@
           through bounties that require someone to physically go, do, document,
           and verify.
         </p>
+
+        <div class="home-entry-label">
+          <span>ENTER FIELD MARKET</span>
+          <span>SELECT A MODE ↓</span>
+        </div>
 
         <div class="home-action-grid">
           <button class="home-action" type="button" data-route="market">
@@ -74,6 +86,8 @@
       </div>
 
       <div class="brand-visual">
+        <div class="home-visual-city" aria-hidden="true"></div>
+        <div class="home-visual-poster" aria-hidden="true"></div>
         <div class="drop-card" id="homeStatusCard">
           <div class="drop-card-top">
             <span id="homeStatusKicker">FIELD STATUS</span>
@@ -151,7 +165,8 @@
     </section>
 
     <section class="stage" id="stage">
-      <div class="stage-note">drag / scroll to browse · click to inspect</div>
+      <div class="market-stage-visual" aria-hidden="true"></div>
+      <div class="stage-note">DRAG / SCROLL TO BROWSE · CLICK ACTIVE RECORD TO INSPECT</div>
 
       <div class="ring-wrap">
         <div class="ring" id="ring"></div>
@@ -520,6 +535,7 @@
 
     <div class="post-bounty-layout">
       <div class="post-bounty-intro">
+        <div class="post-visual-strip" aria-hidden="true"></div>
         <div class="tiny-label">REQUESTER FLOW / CREATE A TASK</div>
         <h1>POST<br>A BOUNTY.</h1>
 

@@ -2605,3 +2605,2147 @@ img {
     right: 20px;
   }
 }
+
+/* ==========================================================
+   FIELD MARKET — CLEAR STREET SYSTEM / REDESIGN
+   Priority: hierarchy first, texture second.
+   Original carousel preserved. Bounty images have NO layer.
+========================================================== */
+
+:root {
+  --night: #0C0F0A;
+  --lemon: #FBFF12;
+  --rose: #FF206E;
+  --white: #F5F5EF;
+  --grey: #8B8E87;
+  --ink-soft: rgba(12, 15, 10, 0.70);
+  --paper-line: rgba(12, 15, 10, 0.18);
+  --light-line: rgba(245, 245, 239, 0.18);
+}
+
+/* ---------- TYPE ROLES ---------- */
+
+.home-type-line,
+.stage-note,
+.tiny-label,
+.section-code,
+.product-id,
+.bounty-card-id,
+.bounty-card-status,
+.drop-card-top,
+.drop-card-price span,
+.drop-card-bottom,
+.transition-top {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+}
+
+.hero-market {
+  font-family: "Coral Pixels", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.home-type-line {
+  min-height: 15px;
+  margin: -8px 0 15px;
+  color: var(--rose);
+  font-size: 6px;
+  line-height: 1.8;
+}
+
+.home-type-line.is-typing::after {
+  content: "_";
+  margin-left: 2px;
+  animation: clearCursor 620ms steps(2, end) infinite;
+}
+
+@keyframes clearCursor {
+  50% { opacity: 0; }
+}
+
+/* ==========================================================
+   HOME
+========================================================== */
+
+.brand-page {
+  min-height: 100vh;
+  padding: 0;
+  background: var(--lemon);
+  color: var(--night);
+  overflow: hidden;
+}
+
+.brand-page-header {
+  position: relative;
+  z-index: 20;
+  min-height: 70px;
+  padding: 22px 38px 18px;
+  align-items: center;
+  border-bottom: 2px solid var(--night);
+  background: rgba(251, 255, 18, 0.96);
+}
+
+.site-mark {
+  color: var(--night);
+  font-size: 19px;
+}
+
+.site-mark sup {
+  color: var(--rose);
+}
+
+.site-code {
+  color: var(--night);
+  opacity: .62;
+}
+
+.home-nav button {
+  color: var(--night);
+  opacity: .72;
+}
+
+.home-nav button:hover {
+  color: var(--rose);
+  opacity: 1;
+}
+
+.brand-page-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  grid-template-columns: minmax(0, 1.05fr) minmax(390px, .95fr);
+  gap: 58px;
+  padding: 46px 40px 36px;
+  align-items: center;
+}
+
+/* One soft grid only. It is atmosphere, not content. */
+.brand-page-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(rgba(12,15,10,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12,15,10,.055) 1px, transparent 1px);
+  background-size: 27px 27px;
+  pointer-events: none;
+}
+
+.brand-copy {
+  position: relative;
+  z-index: 6;
+  max-width: 760px;
+}
+
+.brand-copy .section-code {
+  margin-bottom: 18px;
+  color: var(--night);
+  opacity: .70;
+}
+
+.brand-copy h1 {
+  margin: 0;
+  color: var(--night);
+  font-size: clamp(92px, 9.7vw, 160px);
+  line-height: .73;
+  letter-spacing: -.078em;
+  text-shadow: none;
+}
+
+.hero-field {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+.hero-market {
+  display: inline-block;
+  color: var(--rose);
+  font-size: .86em;
+  line-height: .86;
+  letter-spacing: -.025em;
+}
+
+.brand-copy h2 {
+  margin: 26px 0 0;
+  color: var(--night);
+  font-size: clamp(22px, 2.3vw, 34px);
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+
+.brand-copy p {
+  max-width: 580px;
+  margin: 18px 0 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.52;
+}
+
+/* Four entrances are navigation first, decoration second. */
+.home-action-grid {
+  width: min(700px, 100%);
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+}
+
+.home-action {
+  position: relative;
+  min-height: 112px;
+  padding: 17px 16px 15px;
+  border: 2px solid var(--night);
+  background: var(--white);
+  color: var(--night);
+  box-shadow: none;
+  transform: none !important;
+  overflow: hidden;
+}
+
+.home-action::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 7px;
+  background: var(--lemon);
+}
+
+.home-action:nth-child(2)::before {
+  background: var(--rose);
+}
+
+.home-action:nth-child(3)::before {
+  background: var(--night);
+}
+
+.home-action:nth-child(4)::before {
+  background: linear-gradient(90deg, var(--rose) 0 50%, var(--lemon) 50% 100%);
+}
+
+.home-action span,
+.home-action small,
+.home-action strong,
+.home-action b {
+  color: var(--night);
+}
+
+.home-action span,
+.home-action small {
+  opacity: .58;
+}
+
+.home-action strong {
+  font-size: 17px;
+}
+
+.home-action b {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--night);
+  border-radius: 50%;
+  font-size: 17px;
+}
+
+.home-action:hover,
+.home-action.is-previewing {
+  transform: translateY(-4px) !important;
+  border-color: var(--night);
+  color: var(--night);
+  box-shadow: 7px 7px 0 var(--night);
+}
+
+.home-action:nth-child(1):hover,
+.home-action:nth-child(1).is-previewing {
+  background: var(--lemon);
+}
+
+.home-action:nth-child(2):hover,
+.home-action:nth-child(2).is-previewing {
+  background: var(--rose);
+}
+
+.home-action:nth-child(3):hover,
+.home-action:nth-child(3).is-previewing {
+  background: var(--night);
+  color: var(--white);
+}
+
+.home-action:nth-child(3):hover span,
+.home-action:nth-child(3):hover small,
+.home-action:nth-child(3):hover strong,
+.home-action:nth-child(3):hover b,
+.home-action:nth-child(3).is-previewing span,
+.home-action:nth-child(3).is-previewing small,
+.home-action:nth-child(3).is-previewing strong,
+.home-action:nth-child(3).is-previewing b {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.home-action:nth-child(4):hover,
+.home-action:nth-child(4).is-previewing {
+  background: var(--white);
+}
+
+.home-action:hover span,
+.home-action:hover small,
+.home-action:hover strong,
+.home-action:hover b,
+.home-action.is-previewing span,
+.home-action.is-previewing small,
+.home-action.is-previewing strong,
+.home-action.is-previewing b {
+  color: inherit;
+}
+
+.home-action:hover b,
+.home-action.is-previewing b {
+  transform: translateX(3px);
+}
+
+/* Right side: one visual background + one readable system card. */
+.brand-visual {
+  position: relative;
+  min-height: 585px;
+  isolation: isolate;
+}
+
+.home-visual-city {
+  position: absolute;
+  z-index: 0;
+  inset: 7% 2% 11% 3%;
+  border: 2px solid var(--night);
+  background:
+    var(--night)
+    url("assets/visual-city-yellow.png")
+    center / cover no-repeat;
+  overflow: hidden;
+}
+
+.home-visual-poster {
+  position: absolute;
+  z-index: 1;
+  width: 47%;
+  height: 42%;
+  right: -3%;
+  bottom: 3%;
+  border: 2px solid var(--night);
+  background:
+    var(--rose)
+    url("assets/visual-poster-pink.png")
+    center / cover no-repeat;
+  transform: rotate(3deg);
+}
+
+.drop-card {
+  position: absolute;
+  z-index: 4;
+  width: min(470px, 78%);
+  height: 480px;
+  right: 5%;
+  top: 50%;
+  translate: 0 -50%;
+  padding: 26px;
+  border: 2px solid var(--night);
+  border-radius: 0;
+  background: var(--white);
+  color: var(--night);
+  box-shadow: 12px 12px 0 var(--night);
+  transform: none;
+  overflow: hidden;
+}
+
+.drop-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 12px;
+  background: var(--rose);
+}
+
+.drop-card::after {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 5px,
+      rgba(12,15,10,.025) 5px 6px
+    );
+}
+
+.drop-card.preview-shift {
+  transform: translateY(-4px);
+}
+
+.drop-card-top,
+.drop-card-price,
+.drop-card-bottom {
+  border-color: var(--paper-line);
+}
+
+.drop-card-top,
+.drop-card-price span,
+.drop-card-bottom > span {
+  color: var(--night);
+}
+
+.drop-live {
+  padding: 5px 7px;
+  background: var(--night);
+  color: var(--lemon);
+}
+
+.drop-live::before {
+  background: var(--lemon);
+}
+
+.drop-card-main {
+  padding: 42px 0 24px;
+  gap: 15px;
+}
+
+.drop-card-number {
+  color: var(--night);
+  font-size: clamp(120px, 10vw, 172px);
+}
+
+.drop-card-title {
+  color: var(--night);
+  font-size: clamp(24px, 2.2vw, 36px);
+}
+
+.drop-card-price strong {
+  color: var(--rose);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 46px;
+  font-weight: 900;
+}
+
+.drop-edition {
+  color: var(--night);
+  opacity: .55;
+}
+
+.brand-page-footer {
+  position: relative;
+  z-index: 10;
+  min-height: 46px;
+  padding: 0 38px;
+  display: flex;
+  align-items: center;
+  border: 0;
+  background: var(--night);
+  color: var(--lemon);
+  font-size: 8px;
+}
+
+/* ==========================================================
+   LIVE MARKET — ORIGINAL RING, CLEANER STAGE
+========================================================== */
+
+.market-page {
+  min-height: 100vh;
+  padding: 0 0 28px;
+  background: var(--night);
+}
+
+.market-header {
+  min-height: 92px;
+  padding: 24px 38px 18px;
+  align-items: center;
+  border-bottom: 1px solid var(--light-line);
+}
+
+.market-logo > div {
+  color: var(--white);
+}
+
+.market-logo small {
+  color: var(--grey);
+}
+
+.market-header .back-button,
+.market-header .text-nav-button {
+  color: var(--white);
+}
+
+.market-header .text-nav-button {
+  opacity: .62;
+}
+
+.market-header .back-button:hover,
+.market-header .text-nav-button:hover {
+  color: var(--lemon);
+  opacity: 1;
+}
+
+.market-status {
+  margin: 0;
+  padding: 16px 38px 18px;
+  align-items: center;
+  background: var(--lemon);
+  color: var(--night);
+  border-bottom: 2px solid var(--night);
+}
+
+.market-status .tiny-label,
+.market-status .live-indicator {
+  color: var(--night);
+}
+
+.countdown {
+  margin-top: 6px;
+  color: var(--night);
+  font-size: clamp(42px, 5vw, 72px);
+}
+
+.countdown b,
+.countdown small {
+  color: var(--rose);
+}
+
+.live-dot {
+  background: var(--rose);
+  box-shadow: 0 0 0 5px rgba(255,32,110,.12);
+}
+
+.stage {
+  position: relative;
+  min-height: 640px;
+  margin: 0;
+  background: var(--night);
+  border-bottom: 1px solid var(--light-line);
+}
+
+.market-stage-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(12,15,10,.95) 0 23%, rgba(12,15,10,.55) 45%, rgba(12,15,10,.90) 100%),
+    url("assets/visual-city-yellow.png") center / cover no-repeat;
+  opacity: .32;
+  pointer-events: none;
+}
+
+.stage-note {
+  top: 17px;
+  z-index: 12;
+  color: var(--white);
+  opacity: .58;
+  font-size: 6px;
+  letter-spacing: .05em;
+}
+
+.ring-wrap {
+  z-index: 3;
+  inset: 44px 0 96px;
+}
+
+.card {
+  border: 1px solid rgba(245,245,239,.30);
+  background: #111;
+  box-shadow: 0 16px 42px rgba(0,0,0,.46);
+}
+
+.card.active {
+  border: 2px solid var(--lemon);
+  box-shadow:
+    8px 8px 0 rgba(255,32,110,.76),
+    0 22px 52px rgba(0,0,0,.55);
+}
+
+.card-category {
+  background: var(--night);
+  color: var(--lemon);
+}
+
+.focus-panel {
+  left: 36px;
+  bottom: 30px;
+  width: 330px;
+  padding: 17px 18px 18px;
+  border: 2px solid var(--night);
+  background: var(--white);
+  color: var(--night);
+  box-shadow: 8px 8px 0 var(--rose);
+}
+
+.focus-category {
+  color: var(--rose);
+}
+
+.focus-id,
+.focus-meta {
+  color: rgba(12,15,10,.58);
+}
+
+.focus-title {
+  color: var(--night);
+}
+
+.inspect-button {
+  border: 2px solid var(--night);
+  background: var(--night);
+  color: var(--lemon);
+}
+
+.inspect-button:hover {
+  border-color: var(--rose);
+  background: var(--rose);
+  color: var(--night);
+}
+
+.drop-footer {
+  padding: 20px 38px 0;
+  border: 0;
+  background: var(--night);
+}
+
+.drop-footer .tiny-label,
+.drop-description {
+  color: var(--grey);
+}
+
+.next-drop-time {
+  color: var(--lemon);
+}
+
+/* ==========================================================
+   MARKET DETAIL — CLEAN ARCHIVE
+========================================================== */
+
+.product-page {
+  background: var(--white);
+  color: var(--night);
+}
+
+.product-header {
+  background: var(--night);
+  border-color: var(--light-line);
+}
+
+.product-header .back-button,
+.product-header .text-nav-button {
+  color: var(--white);
+}
+
+.product-header .back-button:hover,
+.product-header .text-nav-button:hover {
+  color: var(--lemon);
+}
+
+.product-header-center {
+  color: var(--grey);
+}
+
+.product-layout {
+  background: var(--white);
+}
+
+.product-image-panel {
+  border-right: 2px solid var(--night);
+  background: var(--night);
+}
+
+.product-image-panel::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 120px;
+  height: 82px;
+  border: 2px solid var(--night);
+  background:
+    var(--rose)
+    url("assets/visual-poster-pink.png")
+    center / cover no-repeat;
+  pointer-events: none;
+}
+
+.product-image-tag {
+  background: var(--lemon);
+  color: var(--night);
+  border: 1px solid var(--night);
+}
+
+.product-info-panel {
+  background: var(--white);
+  color: var(--night);
+}
+
+.product-topline {
+  color: rgba(12,15,10,.58);
+}
+
+.product-status {
+  color: var(--rose);
+}
+
+.product-id {
+  color: rgba(12,15,10,.52);
+}
+
+.product-info-panel h1 {
+  color: var(--night);
+}
+
+.product-price {
+  color: var(--rose);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+.product-description {
+  color: rgba(12,15,10,.76);
+}
+
+.product-edition-row,
+.product-metadata > div {
+  border-color: var(--paper-line);
+}
+
+.product-edition-row,
+.product-metadata dt {
+  color: rgba(12,15,10,.52);
+}
+
+.watch-button {
+  border: 2px solid var(--night);
+  color: var(--night);
+}
+
+.watch-button.active {
+  border-color: var(--rose);
+  color: var(--rose);
+}
+
+.add-cart-button {
+  border: 2px solid var(--night);
+  background: var(--lemon);
+  color: var(--night);
+}
+
+.add-cart-button:hover {
+  background: var(--rose);
+}
+
+/* ==========================================================
+   BOUNTIES — CLEAR BOARD, NO IMAGE LAYERS
+========================================================== */
+
+.bounty-page {
+  background: var(--night);
+  color: var(--white);
+}
+
+.bounty-page .page-header {
+  min-height: 92px;
+  padding-top: 24px;
+  background: var(--night);
+  border-bottom: 1px solid var(--light-line);
+}
+
+.bounty-page .back-button,
+.bounty-page .text-nav-button,
+.bounty-page .page-logo {
+  color: var(--white);
+}
+
+.bounty-page .text-nav-button {
+  opacity: .62;
+}
+
+.bounty-page .page-logo sup {
+  color: var(--rose);
+}
+
+.accent-header-button {
+  border: 2px solid var(--night);
+  background: var(--lemon);
+  color: var(--night);
+}
+
+.accent-header-button:hover {
+  background: var(--rose);
+  border-color: var(--rose);
+}
+
+.bounty-hero {
+  padding: 64px 46px 38px;
+  background: var(--rose);
+  color: var(--night);
+  border-bottom: 2px solid var(--night);
+}
+
+.bounty-hero .tiny-label,
+.bounty-hero-copy p {
+  color: var(--night);
+  opacity: .72;
+}
+
+.bounty-hero h1 {
+  color: var(--night);
+}
+
+.bounty-board-counts {
+  border-color: rgba(12,15,10,.28);
+}
+
+.bounty-board-counts > div {
+  border-color: rgba(12,15,10,.28);
+}
+
+.bounty-board-counts span {
+  color: rgba(12,15,10,.56);
+}
+
+.bounty-board-counts strong {
+  color: var(--night);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+.bounty-filter-bar {
+  margin: 0;
+  padding: 18px 46px;
+  gap: 8px;
+  border: 0;
+  background: var(--lemon);
+}
+
+.bounty-filter {
+  min-height: 39px;
+  border: 2px solid var(--night);
+  background: var(--white);
+  color: var(--night);
+}
+
+.bounty-filter:hover,
+.bounty-filter.active {
+  background: var(--night);
+  color: var(--lemon);
+}
+
+.bounty-grid {
+  margin: 0;
+  padding: 20px 46px 54px;
+  border: 0;
+  background: var(--night);
+}
+
+.bounty-card {
+  min-height: 116px;
+  margin-bottom: 9px;
+  padding: 12px 14px;
+  border: 2px solid var(--white);
+  background: var(--white);
+  color: var(--night);
+}
+
+.bounty-card:hover {
+  transform: translateX(5px);
+  background: var(--lemon);
+  border-color: var(--lemon);
+}
+
+.bounty-card-id,
+.bounty-card-location,
+.bounty-card-time,
+.bounty-card-title small,
+.bounty-card-arrow {
+  color: rgba(12,15,10,.52);
+}
+
+.bounty-card-title {
+  color: var(--night);
+}
+
+.bounty-card:hover .bounty-card-title,
+.bounty-card:hover .bounty-card-arrow {
+  color: var(--night);
+}
+
+.bounty-card-status {
+  padding: 7px 8px;
+  border: 1px solid currentColor;
+}
+
+.status-open {
+  color: #616500;
+  background: var(--lemon);
+}
+
+.status-progress,
+.status-waiting {
+  color: var(--night);
+  background: #E9EAE4;
+}
+
+.status-fulfilled {
+  color: #9F003B;
+  background: #FFD2E2;
+}
+
+.bounty-card-reward {
+  color: var(--night);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+/* Fulfilled bounty photo is direct. No cover, no peel, no texture layer. */
+.bounty-detail-page {
+  background: var(--white);
+  color: var(--night);
+}
+
+.bounty-detail-layout {
+  background: var(--white);
+}
+
+.bounty-media-panel {
+  padding: 30px;
+  border-right: 2px solid var(--night);
+  background: var(--night);
+}
+
+.bounty-image-frame {
+  border: 2px solid var(--white);
+  background: #111;
+}
+
+.bounty-image-frame img {
+  filter: none;
+}
+
+.proof-label {
+  background: var(--rose);
+  color: var(--night);
+}
+
+.proof-archive-meta {
+  border-color: var(--white);
+  background: var(--white);
+}
+
+.proof-archive-meta > div {
+  border-color: var(--night);
+}
+
+.proof-archive-meta span {
+  color: rgba(12,15,10,.52);
+}
+
+.proof-archive-meta strong {
+  color: var(--night);
+}
+
+.proof-archive-meta > div:nth-child(3) strong {
+  color: var(--rose);
+}
+
+.no-reference {
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  border: 2px solid var(--lemon);
+  background:
+    linear-gradient(rgba(12,15,10,.87), rgba(12,15,10,.87)),
+    url("assets/visual-city-yellow.png") center / cover no-repeat;
+}
+
+.no-reference span {
+  color: var(--lemon);
+}
+
+.no-reference strong {
+  color: var(--white);
+}
+
+.bounty-info-panel {
+  background: var(--white);
+  color: var(--night);
+}
+
+.bounty-info-panel .product-topline,
+.bounty-info-panel .product-id {
+  color: rgba(12,15,10,.52);
+}
+
+.bounty-info-panel h1 {
+  color: var(--night);
+}
+
+.bounty-reward strong {
+  color: var(--rose);
+}
+
+.bounty-task-list > div {
+  border-color: var(--paper-line);
+}
+
+.bounty-task-list dt {
+  color: rgba(12,15,10,.52);
+}
+
+.take-bounty-button,
+.flow-button,
+.submit-proof-button,
+.approve-proof-button {
+  border: 2px solid var(--night);
+}
+
+.take-bounty-button {
+  background: var(--lemon);
+  color: var(--night);
+}
+
+.take-bounty-button:hover,
+.flow-button:hover,
+.submit-proof-button:hover,
+.approve-proof-button:hover {
+  background: var(--rose);
+  color: var(--night);
+}
+
+.mission-panel,
+.requester-review,
+.fulfilled-panel {
+  border-color: var(--night);
+}
+
+.fulfilled-panel {
+  background: var(--lemon);
+  color: var(--night);
+}
+
+/* ==========================================================
+   POST A BOUNTY
+========================================================== */
+
+.post-bounty-page {
+  background: var(--lemon);
+  color: var(--night);
+}
+
+.post-bounty-page .product-header {
+  background: var(--night);
+}
+
+.post-bounty-layout {
+  background: var(--lemon);
+}
+
+.post-bounty-intro {
+  position: relative;
+  overflow: hidden;
+  border-right: 2px solid var(--night);
+  color: var(--night);
+}
+
+.post-visual-strip {
+  width: min(420px, 90%);
+  height: 170px;
+  margin: 0 0 28px;
+  border: 2px solid var(--night);
+  background:
+    var(--rose)
+    url("assets/visual-poster-pink.png")
+    center / cover no-repeat;
+}
+
+.post-bounty-intro .tiny-label {
+  color: var(--night);
+  opacity: .56;
+}
+
+.post-bounty-intro h1 {
+  color: var(--night);
+}
+
+.post-bounty-intro p {
+  color: rgba(12,15,10,.72);
+}
+
+.post-flow-note span {
+  border-color: var(--night);
+  color: var(--night);
+}
+
+.bounty-form {
+  background: var(--white);
+  color: var(--night);
+  border: 2px solid var(--night);
+}
+
+.bounty-form label > span {
+  color: rgba(12,15,10,.58);
+}
+
+.bounty-form input,
+.bounty-form textarea {
+  border-color: var(--paper-line);
+  background: #FFF;
+  color: var(--night);
+}
+
+.bounty-form input:focus,
+.bounty-form textarea:focus {
+  outline: 2px solid var(--rose);
+  border-color: transparent;
+}
+
+.publish-bounty-button {
+  border: 2px solid var(--night);
+  background: var(--rose);
+  color: var(--night);
+}
+
+/* ==========================================================
+   DISCUSSION — PUBLIC ANNOTATION WALL, BUT ORDERED
+========================================================== */
+
+.discussion-page {
+  background: var(--white);
+  color: var(--night);
+}
+
+.discussion-page .page-header {
+  min-height: 92px;
+  background: var(--night);
+  border-bottom: 1px solid var(--light-line);
+}
+
+.discussion-page .back-button,
+.discussion-page .text-nav-button,
+.discussion-page .page-logo {
+  color: var(--white);
+}
+
+.discussion-page .page-logo sup {
+  color: var(--lemon);
+}
+
+.discussion-main {
+  background:
+    linear-gradient(rgba(245,245,239,.94), rgba(245,245,239,.94)),
+    url("assets/visual-scan-yellow.png") right top / 42% auto no-repeat;
+}
+
+.discussion-title-row {
+  border-bottom: 2px solid var(--night);
+}
+
+.discussion-title-row .tiny-label {
+  color: rgba(12,15,10,.52);
+}
+
+.discussion-title-row h1 {
+  color: var(--night);
+}
+
+.discussion-online {
+  border-color: var(--night);
+  color: var(--night);
+}
+
+.discussion-online-dot {
+  background: var(--rose);
+}
+
+.discussion-message {
+  border-color: var(--night);
+  background: var(--white);
+  color: var(--night);
+}
+
+.discussion-message:nth-child(3n + 2) {
+  background: #FFF9AA;
+}
+
+.discussion-message:nth-child(3n + 3) {
+  background: #FFD0E1;
+}
+
+.discussion-link {
+  border-color: var(--night);
+  color: var(--night);
+}
+
+.discussion-link:hover {
+  background: var(--night);
+  color: var(--lemon);
+}
+
+/* ==========================================================
+   TRANSITION — KEEP BLACK FOR SEPARATION
+========================================================== */
+
+.page-transition {
+  background: var(--night);
+  color: var(--white);
+}
+
+.transition-top {
+  color: var(--grey);
+}
+
+.transition-line {
+  background: rgba(245,245,239,.18);
+}
+
+.transition-line::before {
+  content: "";
+  position: absolute;
+  inset: -5px auto -5px 0;
+  width: 10%;
+  background: var(--rose);
+  opacity: .55;
+}
+
+.transition-line::after {
+  background: var(--lemon);
+}
+
+.transition-label {
+  color: var(--white);
+}
+
+.transition-label::first-letter {
+  color: var(--lemon);
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 1000px) {
+  .brand-page-main {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 30px;
+    padding-inline: 26px;
+  }
+
+  .drop-card {
+    width: 86%;
+    height: 450px;
+    right: 4%;
+  }
+
+  .home-visual-city {
+    inset: 10% 0 12% 0;
+  }
+
+  .bounty-card {
+    grid-template-columns: 72px 80px minmax(0, 1fr) 130px 110px 90px 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .brand-page-header {
+    padding: 18px 18px 16px;
+  }
+
+  .brand-page-main {
+    grid-template-columns: 1fr;
+    padding: 34px 18px 30px;
+  }
+
+  .brand-copy h1 {
+    font-size: clamp(72px, 24vw, 120px);
+  }
+
+  .home-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-visual {
+    min-height: 480px;
+  }
+
+  .home-visual-city {
+    inset: 4% 4% 9%;
+  }
+
+  .home-visual-poster {
+    width: 44%;
+    right: 1%;
+  }
+
+  .drop-card {
+    width: 78%;
+    height: 400px;
+    right: 11%;
+  }
+
+  .brand-page-footer {
+    padding-inline: 18px;
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+
+  .market-header,
+  .market-status {
+    padding-inline: 18px;
+  }
+
+  .stage {
+    min-height: 690px;
+  }
+
+  .ring-wrap {
+    inset: 42px 0 210px;
+  }
+
+  .focus-panel {
+    left: 18px;
+    right: 18px;
+    bottom: 22px;
+    width: auto;
+  }
+
+  .drop-footer {
+    padding-inline: 18px;
+  }
+
+  .bounty-hero {
+    padding: 46px 18px 28px;
+  }
+
+  .bounty-filter-bar {
+    padding-inline: 18px;
+  }
+
+  .bounty-grid {
+    padding: 14px 18px 38px;
+  }
+
+  .bounty-card {
+    grid-template-columns: 62px 1fr 80px 28px;
+    gap: 10px;
+  }
+
+  .bounty-card-location,
+  .bounty-card-time,
+  .bounty-card-status {
+    display: none;
+  }
+
+  .bounty-detail-layout,
+  .product-layout,
+  .post-bounty-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bounty-media-panel,
+  .product-image-panel,
+  .post-bounty-intro {
+    border-right: 0;
+    border-bottom: 2px solid var(--night);
+  }
+
+  .discussion-main {
+    background-size: 90% auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-type-line.is-typing::after {
+    animation: none;
+  }
+}
+
+/* ==========================================================
+   V2 PATCH — CLEARER HOME ENTRY CARDS + CLEAN PRODUCT IMAGE
+========================================================== */
+
+/* Remove the decorative pink mini graphic from product detail. */
+.product-image-panel::after {
+  display: none !important;
+}
+
+/* Homepage entry cards:
+   01 yellow / 02 black / 03 white / 04 black.
+   The structure stays consistent; color creates hierarchy. */
+.home-action:nth-child(1) {
+  background: var(--lemon);
+  color: var(--night);
+}
+
+.home-action:nth-child(2) {
+  background: var(--night);
+  color: var(--white);
+}
+
+.home-action:nth-child(3) {
+  background: var(--white);
+  color: var(--night);
+}
+
+.home-action:nth-child(4) {
+  background: var(--night);
+  color: var(--white);
+}
+
+/* Keep the small top bars as page/category cues. */
+.home-action:nth-child(1)::before {
+  background: var(--night);
+}
+
+.home-action:nth-child(2)::before {
+  background: var(--rose);
+}
+
+.home-action:nth-child(3)::before {
+  background: var(--rose);
+}
+
+.home-action:nth-child(4)::before {
+  background: var(--lemon);
+}
+
+/* Text hierarchy inside dark cards. */
+.home-action:nth-child(2) span,
+.home-action:nth-child(2) small,
+.home-action:nth-child(4) span,
+.home-action:nth-child(4) small {
+  color: rgba(245, 245, 239, 0.62);
+}
+
+.home-action:nth-child(2) strong,
+.home-action:nth-child(4) strong {
+  color: var(--white);
+}
+
+.home-action:nth-child(2) b {
+  color: var(--rose);
+  border-color: var(--rose);
+}
+
+.home-action:nth-child(4) b {
+  color: var(--lemon);
+  border-color: var(--lemon);
+}
+
+/* Hover stays legible and gives each route a distinct accent. */
+.home-action:nth-child(1):hover,
+.home-action:nth-child(1).is-previewing {
+  background: var(--white);
+  color: var(--night);
+  box-shadow: 7px 7px 0 var(--night);
+}
+
+.home-action:nth-child(2):hover,
+.home-action:nth-child(2).is-previewing {
+  background: var(--rose);
+  color: var(--night);
+  box-shadow: 7px 7px 0 var(--night);
+}
+
+.home-action:nth-child(3):hover,
+.home-action:nth-child(3).is-previewing {
+  background: var(--lemon);
+  color: var(--night);
+  box-shadow: 7px 7px 0 var(--night);
+}
+
+.home-action:nth-child(4):hover,
+.home-action:nth-child(4).is-previewing {
+  background: var(--white);
+  color: var(--night);
+  box-shadow: 7px 7px 0 var(--rose);
+}
+
+.home-action:nth-child(2):hover span,
+.home-action:nth-child(2):hover small,
+.home-action:nth-child(4):hover span,
+.home-action:nth-child(4):hover small,
+.home-action:nth-child(2).is-previewing span,
+.home-action:nth-child(2).is-previewing small,
+.home-action:nth-child(4).is-previewing span,
+.home-action:nth-child(4).is-previewing small {
+  color: rgba(12, 15, 10, 0.58);
+}
+
+.home-action:nth-child(2):hover strong,
+.home-action:nth-child(4):hover strong,
+.home-action:nth-child(2).is-previewing strong,
+.home-action:nth-child(4).is-previewing strong {
+  color: var(--night);
+}
+
+.home-action:nth-child(2):hover b,
+.home-action:nth-child(2).is-previewing b,
+.home-action:nth-child(4):hover b,
+.home-action:nth-child(4).is-previewing b {
+  color: var(--night);
+  border-color: var(--night);
+}
+
+/* ==========================================================
+   BLACK REFINED HOME
+   Goal: premium hierarchy, not a white-grid prototype.
+========================================================== */
+
+.brand-page {
+  background: var(--night);
+  color: var(--white);
+}
+
+.brand-page-header {
+  background: rgba(12,15,10,.96);
+  border-bottom: 1px solid rgba(245,245,239,.16);
+}
+
+.site-mark,
+.site-code,
+.home-nav button {
+  color: var(--white);
+}
+
+.site-code,
+.home-nav button {
+  opacity: .58;
+}
+
+.home-nav button:hover {
+  color: var(--lemon);
+  opacity: 1;
+}
+
+/* Remove the pale-grid feeling. Keep only a very subtle dark structural grid. */
+.brand-page-main::before {
+  background:
+    linear-gradient(rgba(245,245,239,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,245,239,.028) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.brand-copy .section-code {
+  color: var(--grey);
+  opacity: 1;
+}
+
+.home-type-line {
+  color: var(--rose);
+}
+
+.brand-copy h1 {
+  color: var(--white);
+}
+
+.hero-market {
+  color: var(--lemon);
+}
+
+.brand-copy h2 {
+  color: var(--rose);
+}
+
+.brand-copy p {
+  color: rgba(245,245,239,.72);
+}
+
+/* Stronger content hierarchy: title -> slogan -> entrances. */
+.brand-copy {
+  max-width: 720px;
+}
+
+.brand-copy h1 {
+  font-size: clamp(88px, 9.2vw, 150px);
+}
+
+.brand-copy h2 {
+  margin-top: 24px;
+}
+
+/* Entry cards: mostly black, but clearly separated from the black field. */
+.home-action-grid {
+  gap: 10px;
+}
+
+.home-action {
+  border: 1px solid rgba(245,245,239,.34);
+  background: #111510;
+  color: var(--white);
+  box-shadow: none;
+}
+
+.home-action span,
+.home-action small {
+  color: rgba(245,245,239,.50);
+}
+
+.home-action strong {
+  color: var(--white);
+}
+
+.home-action b {
+  color: var(--white);
+  border-color: rgba(245,245,239,.56);
+}
+
+.home-action:nth-child(1),
+.home-action:nth-child(2),
+.home-action:nth-child(4) {
+  background: #111510;
+  color: var(--white);
+}
+
+.home-action:nth-child(3) {
+  background: var(--white);
+  color: var(--night);
+  border-color: var(--white);
+}
+
+.home-action:nth-child(3) span,
+.home-action:nth-child(3) small {
+  color: rgba(12,15,10,.50);
+}
+
+.home-action:nth-child(3) strong,
+.home-action:nth-child(3) b {
+  color: var(--night);
+  border-color: rgba(12,15,10,.48);
+}
+
+/* Small accent bars tell the four routes apart without turning them into posters. */
+.home-action:nth-child(1)::before { background: var(--lemon); }
+.home-action:nth-child(2)::before { background: var(--rose); }
+.home-action:nth-child(3)::before { background: var(--night); }
+.home-action:nth-child(4)::before {
+  background: linear-gradient(90deg, var(--lemon) 0 50%, var(--rose) 50% 100%);
+}
+
+.home-action:hover,
+.home-action.is-previewing {
+  transform: translateY(-4px) !important;
+  box-shadow: 8px 8px 0 rgba(0,0,0,.48);
+}
+
+.home-action:nth-child(1):hover,
+.home-action:nth-child(1).is-previewing {
+  background: var(--lemon);
+  color: var(--night);
+  border-color: var(--lemon);
+}
+
+.home-action:nth-child(2):hover,
+.home-action:nth-child(2).is-previewing {
+  background: var(--rose);
+  color: var(--night);
+  border-color: var(--rose);
+}
+
+.home-action:nth-child(3):hover,
+.home-action:nth-child(3).is-previewing {
+  background: var(--white);
+  color: var(--night);
+  border-color: var(--white);
+}
+
+.home-action:nth-child(4):hover,
+.home-action:nth-child(4).is-previewing {
+  background: #171C16;
+  color: var(--white);
+  border-color: var(--lemon);
+}
+
+.home-action:nth-child(1):hover span,
+.home-action:nth-child(1):hover small,
+.home-action:nth-child(2):hover span,
+.home-action:nth-child(2):hover small,
+.home-action:nth-child(1).is-previewing span,
+.home-action:nth-child(1).is-previewing small,
+.home-action:nth-child(2).is-previewing span,
+.home-action:nth-child(2).is-previewing small {
+  color: rgba(12,15,10,.58);
+}
+
+.home-action:nth-child(1):hover strong,
+.home-action:nth-child(1):hover b,
+.home-action:nth-child(2):hover strong,
+.home-action:nth-child(2):hover b,
+.home-action:nth-child(1).is-previewing strong,
+.home-action:nth-child(1).is-previewing b,
+.home-action:nth-child(2).is-previewing strong,
+.home-action:nth-child(2).is-previewing b {
+  color: var(--night);
+  border-color: var(--night);
+}
+
+/* Right side: collage is contained in a clean black frame.
+   One city visual, one pink sliver, one readable white data card. */
+.brand-visual {
+  min-height: 570px;
+}
+
+.home-visual-city {
+  inset: 10% 4% 9% 2%;
+  border: 1px solid rgba(245,245,239,.20);
+  background:
+    #0B0D0B
+    url("assets/visual-city-yellow.png")
+    center / cover no-repeat;
+  box-shadow: none;
+  opacity: .95;
+}
+
+.home-visual-poster {
+  width: 33%;
+  height: 42%;
+  right: 1%;
+  bottom: 5%;
+  border: 0;
+  background:
+    var(--rose)
+    url("assets/visual-poster-pink.png")
+    center / cover no-repeat;
+  transform: rotate(3deg);
+  box-shadow: none;
+}
+
+.drop-card {
+  width: min(450px, 76%);
+  height: 460px;
+  right: 5%;
+  top: 50%;
+  border: 1px solid var(--white);
+  background: var(--white);
+  color: var(--night);
+  box-shadow: 12px 12px 0 #000;
+}
+
+.drop-card::before {
+  height: 9px;
+  background: var(--rose);
+}
+
+.drop-card-number {
+  font-size: clamp(118px, 9vw, 160px);
+}
+
+.drop-card-title {
+  font-size: clamp(23px, 2vw, 34px);
+}
+
+.drop-card-price strong {
+  color: var(--rose);
+}
+
+.brand-page-footer {
+  border-top: 1px solid rgba(245,245,239,.14);
+  background: var(--night);
+  color: var(--lemon);
+}
+
+/* Ensure the decorative product-detail pink mini block remains removed. */
+.product-image-panel::after {
+  display: none !important;
+}
+
+/* ==========================================================
+   HOME CARD READABILITY FIX
+   Make the bottom two entry cards match the top-row dark style.
+========================================================== */
+
+.home-action:nth-child(3),
+.home-action:nth-child(4) {
+  background: #111510 !important;
+  color: var(--white) !important;
+  border-color: rgba(245,245,239,.34) !important;
+}
+
+.home-action:nth-child(3) span,
+.home-action:nth-child(3) small,
+.home-action:nth-child(4) span,
+.home-action:nth-child(4) small {
+  color: rgba(245,245,239,.50) !important;
+}
+
+.home-action:nth-child(3) strong,
+.home-action:nth-child(4) strong {
+  color: var(--white) !important;
+}
+
+.home-action:nth-child(3) b {
+  color: var(--rose) !important;
+  border-color: var(--rose) !important;
+}
+
+.home-action:nth-child(4) b {
+  color: var(--lemon) !important;
+  border-color: var(--lemon) !important;
+}
+
+/* Keep their identity through the accent bar, not through text contrast. */
+.home-action:nth-child(3)::before {
+  background: var(--rose) !important;
+}
+
+.home-action:nth-child(4)::before {
+  background: linear-gradient(
+    90deg,
+    var(--lemon) 0 50%,
+    var(--rose) 50% 100%
+  ) !important;
+}
+
+/* Hover stays readable. */
+.home-action:nth-child(3):hover,
+.home-action:nth-child(3).is-previewing {
+  background: var(--rose) !important;
+  color: var(--night) !important;
+  border-color: var(--rose) !important;
+}
+
+.home-action:nth-child(4):hover,
+.home-action:nth-child(4).is-previewing {
+  background: var(--lemon) !important;
+  color: var(--night) !important;
+  border-color: var(--lemon) !important;
+}
+
+.home-action:nth-child(3):hover span,
+.home-action:nth-child(3):hover small,
+.home-action:nth-child(4):hover span,
+.home-action:nth-child(4):hover small,
+.home-action:nth-child(3).is-previewing span,
+.home-action:nth-child(3).is-previewing small,
+.home-action:nth-child(4).is-previewing span,
+.home-action:nth-child(4).is-previewing small {
+  color: rgba(12,15,10,.58) !important;
+}
+
+.home-action:nth-child(3):hover strong,
+.home-action:nth-child(4):hover strong,
+.home-action:nth-child(3).is-previewing strong,
+.home-action:nth-child(4).is-previewing strong,
+.home-action:nth-child(3):hover b,
+.home-action:nth-child(4):hover b,
+.home-action:nth-child(3).is-previewing b,
+.home-action:nth-child(4).is-previewing b {
+  color: var(--night) !important;
+  border-color: var(--night) !important;
+}
+
+/* ==========================================================
+   V3 — HOME ENTRY HIERARCHY
+   Make the four routes read as the main action area.
+========================================================== */
+
+/* Explicit selector label */
+.home-entry-label {
+  width: min(700px, 100%);
+  margin: 30px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: rgba(245,245,239,.72);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 6px;
+  line-height: 1.6;
+  letter-spacing: .04em;
+}
+
+.home-entry-label span:last-child {
+  color: var(--lemon);
+}
+
+/* Entry cards move onto their own visible surface */
+.home-action-grid {
+  margin-top: 0 !important;
+  gap: 11px !important;
+}
+
+.home-action {
+  min-height: 126px !important;
+  padding: 20px 18px 17px !important;
+  background: #171B16 !important;
+  border: 1px solid rgba(245,245,239,.54) !important;
+  color: var(--white) !important;
+  box-shadow: 0 0 0 transparent !important;
+}
+
+.home-action span {
+  color: rgba(245,245,239,.66) !important;
+}
+
+.home-action small {
+  color: rgba(245,245,239,.64) !important;
+}
+
+.home-action strong {
+  color: var(--white) !important;
+  font-size: 19px !important;
+  line-height: 1.05 !important;
+}
+
+.home-action b {
+  width: 36px !important;
+  height: 36px !important;
+  color: var(--white) !important;
+  border: 1.5px solid rgba(245,245,239,.74) !important;
+  font-size: 19px !important;
+}
+
+/* Route numbers become colored navigation cues */
+.home-action:nth-child(1) span { color: var(--lemon) !important; }
+.home-action:nth-child(2) span { color: var(--rose) !important; }
+.home-action:nth-child(3) span { color: var(--rose) !important; }
+.home-action:nth-child(4) span { color: var(--lemon) !important; }
+
+/* Stronger accent bars */
+.home-action::before {
+  height: 8px !important;
+}
+
+.home-action:nth-child(1)::before { background: var(--lemon) !important; }
+.home-action:nth-child(2)::before { background: var(--rose) !important; }
+.home-action:nth-child(3)::before { background: var(--rose) !important; }
+.home-action:nth-child(4)::before {
+  background: linear-gradient(
+    90deg,
+    var(--lemon) 0 50%,
+    var(--rose) 50% 100%
+  ) !important;
+}
+
+/* All four default states stay dark and readable */
+.home-action:nth-child(1),
+.home-action:nth-child(2),
+.home-action:nth-child(3),
+.home-action:nth-child(4) {
+  background: #171B16 !important;
+  color: var(--white) !important;
+}
+
+/* Hover reveals route color; default hierarchy stays calm */
+.home-action:hover,
+.home-action.is-previewing {
+  transform: translateY(-5px) !important;
+  box-shadow: 8px 8px 0 #000 !important;
+}
+
+.home-action:nth-child(1):hover,
+.home-action:nth-child(1).is-previewing {
+  background: var(--lemon) !important;
+  color: var(--night) !important;
+  border-color: var(--lemon) !important;
+}
+
+.home-action:nth-child(2):hover,
+.home-action:nth-child(2).is-previewing,
+.home-action:nth-child(3):hover,
+.home-action:nth-child(3).is-previewing {
+  background: var(--rose) !important;
+  color: var(--night) !important;
+  border-color: var(--rose) !important;
+}
+
+.home-action:nth-child(4):hover,
+.home-action:nth-child(4).is-previewing {
+  background: var(--lemon) !important;
+  color: var(--night) !important;
+  border-color: var(--lemon) !important;
+}
+
+.home-action:hover span,
+.home-action:hover small,
+.home-action:hover strong,
+.home-action:hover b,
+.home-action.is-previewing span,
+.home-action.is-previewing small,
+.home-action.is-previewing strong,
+.home-action.is-previewing b {
+  color: var(--night) !important;
+  border-color: var(--night) !important;
+}
+
+/* The status collage is supporting information, not the primary CTA. */
+.brand-visual {
+  min-height: 540px !important;
+}
+
+.drop-card {
+  width: min(410px, 70%) !important;
+  height: 420px !important;
+  right: 7% !important;
+}
+
+.drop-card-main {
+  padding-top: 34px !important;
+  padding-bottom: 18px !important;
+}
+
+.drop-card-number {
+  font-size: clamp(100px, 7.8vw, 142px) !important;
+}
+
+.drop-card-title {
+  font-size: clamp(20px, 1.75vw, 30px) !important;
+}
+
+.drop-card-price strong {
+  font-size: 40px !important;
+}
+
+.home-visual-city {
+  inset: 12% 6% 10% 5% !important;
+}
+
+.home-visual-poster {
+  width: 28% !important;
+  height: 36% !important;
+  right: 4% !important;
+  bottom: 7% !important;
+}
+
+/* More breathing room between description and the selector area */
+.brand-copy p {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1000px) {
+  .home-entry-label {
+    margin-top: 24px;
+  }
+
+  .drop-card {
+    width: 74% !important;
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-entry-label {
+    margin-top: 24px;
+    font-size: 5px;
+  }
+
+  .home-action {
+    min-height: 112px !important;
+  }
+
+  .drop-card {
+    width: 76% !important;
+    height: 390px !important;
+  }
+}
+
+/* ==========================================================
+   PIXEL SERIF REPLACEMENT — FINAL
+   The old Georgia / Times serif role is now Press Start 2P.
+   Hero MARKET keeps Coral Pixels.
+   Normal UI keeps Arial/Helvetica.
+========================================================== */
+
+/* Long-form text that used to be serif */
+.brand-copy p,
+.product-description,
+.bounty-hero-copy p,
+.requester-review p,
+.post-bounty-intro p,
+.checkout-note {
+  font-family: "Press Start 2P", system-ui !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 8px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Large numbers / prices that used to be serif */
+.drop-card-price strong,
+.countdown,
+.next-drop-time,
+.product-price,
+.bounty-board-counts strong,
+.bounty-card-reward,
+.bounty-reward strong,
+.fulfilled-panel strong,
+.cart-item-price,
+.cart-subtotal strong {
+  font-family: "Press Start 2P", system-ui !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* Tune the pixel scale so it stays readable rather than oversized */
+.drop-card-price strong {
+  font-size: 34px !important;
+}
+
+.countdown {
+  font-size: clamp(34px, 4.8vw, 70px) !important;
+  line-height: 1 !important;
+}
+
+.next-drop-time {
+  font-size: 30px !important;
+}
+
+.product-price {
+  font-size: 28px !important;
+  line-height: 1.2 !important;
+}
+
+.bounty-board-counts strong {
+  font-size: 24px !important;
+}
+
+.bounty-card-reward {
+  font-size: 18px !important;
+}
+
+.bounty-reward strong {
+  font-size: 24px !important;
+}
+
+.fulfilled-panel strong {
+  font-size: 22px !important;
+}
+
+.cart-item-price {
+  font-size: 12px !important;
+}
+
+.cart-subtotal strong {
+  font-size: 22px !important;
+}
+
+/* Keep the hero MARKET exactly in Coral Pixels */
+.hero-market {
+  font-family: "Coral Pixels", serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+
+/* System microcopy stays Press Start 2P */
+.home-type-line,
+.stage-note,
+.tiny-label,
+.section-code,
+.product-id,
+.bounty-card-id,
+.bounty-card-status,
+.drop-card-top,
+.drop-card-price span,
+.drop-card-bottom,
+.transition-top,
+.home-entry-label {
+  font-family: "Press Start 2P", system-ui !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}

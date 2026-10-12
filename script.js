@@ -1465,6 +1465,43 @@ $("#discussionForm").addEventListener("submit", event => {
   $("#discussionInput").value = "";
 });
 
+
+/* =====================================================
+   MICRO TYPEWRITER — restrained system detail
+===================================================== */
+
+function fieldTypewriter(element, text, speed = 42) {
+  if (!element || !text) return;
+
+  element.textContent = "";
+  element.classList.add("is-typing");
+
+  let i = 0;
+
+  const tick = () => {
+    element.textContent = text.slice(0, i + 1);
+    i += 1;
+
+    if (i < text.length) {
+      setTimeout(tick, speed);
+    } else {
+      setTimeout(() => element.classList.remove("is-typing"), 900);
+    }
+  };
+
+  tick();
+}
+
+const homeTypeLine = $("#homeTypeLine");
+
+if (homeTypeLine) {
+  fieldTypewriter(
+    homeTypeLine,
+    homeTypeLine.dataset.text || "READING THE CITY SURFACE...",
+    42
+  );
+}
+
 /* =====================================================
    COUNTDOWN
 ===================================================== */
