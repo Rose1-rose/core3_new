@@ -4749,3 +4749,51 @@ img {
   font-weight: 400 !important;
   font-style: normal !important;
 }
+/* discussion input text fix */
+.discussion-input,
+.discussion-input input,
+.discussion-input textarea,
+.message-input,
+.message-input input,
+.message-input textarea,
+.compose-input,
+.compose-input input,
+.compose-input textarea,
+.chat-input,
+.chat-input input,
+.chat-input textarea,
+input[type="text"],
+textarea {
+  color: #111 !important;
+  caret-color: #111 !important;
+}
+
+/* placeholder */
+.discussion-input input::placeholder,
+.discussion-input textarea::placeholder,
+.message-input input::placeholder,
+.message-input textarea::placeholder,
+.compose-input input::placeholder,
+.compose-input textarea::placeholder,
+.chat-input input::placeholder,
+.chat-input textarea::placeholder,
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: rgba(17, 17, 17, 0.45) !important;
+}
+
+/* 如果你这个输入框本身背景也是透明的，可以顺手一起加 */
+.discussion-input input,
+.discussion-input textarea,
+.message-input input,
+.message-input textarea,
+.compose-input input,
+.compose-input textarea,
+.chat-input input,
+.chat-input textarea,
+input[type="text"],
+textarea {
+  background: transparent !important;
+  border: none;
+  outline: none;
+}
