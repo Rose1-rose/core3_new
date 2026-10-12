@@ -4749,51 +4749,41 @@ img {
   font-weight: 400 !important;
   font-style: normal !important;
 }
-/* discussion input text fix */
-.discussion-input,
-.discussion-input input,
-.discussion-input textarea,
-.message-input,
-.message-input input,
-.message-input textarea,
-.compose-input,
-.compose-input input,
-.compose-input textarea,
-.chat-input,
-.chat-input input,
-.chat-input textarea,
-input[type="text"],
-textarea {
-  color: #111 !important;
-  caret-color: #111 !important;
+
+/* ==========================================================
+   DISCUSSION INPUT VISIBILITY FIX
+   The discussion composer sits on a light background, so typed
+   text and caret must be dark.
+========================================================== */
+
+.discussion-page input,
+.discussion-page textarea,
+.discussion-page [contenteditable="true"],
+.discussion-form input,
+.discussion-form textarea,
+.discussion-form [contenteditable="true"] {
+  color: var(--night) !important;
+  caret-color: var(--night) !important;
 }
 
-/* placeholder */
-.discussion-input input::placeholder,
-.discussion-input textarea::placeholder,
-.message-input input::placeholder,
-.message-input textarea::placeholder,
-.compose-input input::placeholder,
-.compose-input textarea::placeholder,
-.chat-input input::placeholder,
-.chat-input textarea::placeholder,
-input[type="text"]::placeholder,
-textarea::placeholder {
-  color: rgba(17, 17, 17, 0.45) !important;
+.discussion-page input::placeholder,
+.discussion-page textarea::placeholder,
+.discussion-form input::placeholder,
+.discussion-form textarea::placeholder {
+  color: rgba(12, 15, 10, 0.48) !important;
+  opacity: 1 !important;
 }
 
-/* 如果你这个输入框本身背景也是透明的，可以顺手一起加 */
-.discussion-input input,
-.discussion-input textarea,
-.message-input input,
-.message-input textarea,
-.compose-input input,
-.compose-input textarea,
-.chat-input input,
-.chat-input textarea,
-input[type="text"],
-textarea {
+/* Keep the composer surface light and readable. */
+.discussion-form input,
+.discussion-form textarea {
   background: transparent !important;
-  border: none;
-  outline: none;
+}
+
+/* Selection is visible but still on-brand. */
+.discussion-page input::selection,
+.discussion-page textarea::selection,
+.discussion-page [contenteditable="true"]::selection {
+  background: var(--lemon);
+  color: var(--night);
 }
