@@ -2641,7 +2641,7 @@ img {
 }
 
 .hero-market {
-  font-family: "Coral Pixels", serif;
+  font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
 }
@@ -4646,7 +4646,7 @@ img {
 /* ==========================================================
    PIXEL SERIF REPLACEMENT — FINAL
    The old Georgia / Times serif role is now Press Start 2P.
-   Hero MARKET keeps Coral Pixels.
+   FIELD and MARKET share one pixel display voice.
    Normal UI keeps Arial/Helvetica.
 ========================================================== */
 
@@ -4725,9 +4725,9 @@ img {
   font-size: 22px !important;
 }
 
-/* Keep the hero MARKET exactly in Coral Pixels */
+/* Keep the hero wordmark in the shared pixel display voice */
 .hero-market {
-  font-family: "Coral Pixels", serif !important;
+  font-family: "Press Start 2P", system-ui !important;
   font-weight: 400 !important;
   font-style: normal !important;
 }
@@ -4786,4 +4786,813 @@ img {
 .discussion-page [contenteditable="true"]::selection {
   background: var(--lemon);
   color: var(--night);
+}
+
+/* ==========================================================
+   CONCEPT FINAL — FOUND / WANTED / COLLECT
+   One pixel display voice. Black structure, acid yellow + rose accents.
+========================================================== */
+
+/* ONE display language: FIELD and MARKET now belong together. */
+.hero-field,
+.hero-market {
+  font-family: "Press Start 2P", system-ui !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: -0.055em !important;
+  line-height: 1.02 !important;
+  display: inline-block;
+}
+
+.hero-field {
+  color: var(--white) !important;
+  font-size: clamp(54px, 6.2vw, 98px) !important;
+}
+
+.hero-market {
+  color: var(--rose) !important;
+  font-size: clamp(54px, 6.2vw, 98px) !important;
+  margin-top: .16em !important;
+}
+
+/* Keep actual reading text cleaner than the display font. */
+.brand-copy p,
+.product-description,
+.bounty-hero-copy p,
+.post-bounty-intro p,
+.checkout-note,
+.sell-record-intro p,
+.collection-heading p {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Market language */
+.focus-contributor {
+  margin-top: 8px;
+  color: rgba(12,15,10,.55);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 5px;
+  line-height: 1.7;
+}
+
+.market-logo > div,
+.page-logo {
+  font-family: "Press Start 2P", system-ui !important;
+  font-weight: 400 !important;
+}
+
+/* Product detail */
+#productContributor {
+  color: var(--rose);
+  font-weight: 800;
+}
+
+.product-status {
+  color: var(--night) !important;
+}
+
+/* Bounty white-panel readability: no lemon microtype on white. */
+.bounty-info-panel .bounty-status,
+.bounty-info-panel .mission-panel-head strong,
+.bounty-info-panel .mission-step.active > span,
+.bounty-info-panel .mission-step.active strong,
+.bounty-info-panel .flow-button,
+.bounty-info-panel .take-bounty-button {
+  color: var(--night) !important;
+}
+
+.bounty-info-panel .mission-step.active {
+  border-left: 4px solid var(--rose) !important;
+  padding-left: 10px !important;
+}
+
+.bounty-info-panel .flow-button,
+.bounty-info-panel .take-bounty-button {
+  background: transparent !important;
+  border-color: var(--night) !important;
+}
+
+.bounty-info-panel .flow-button:hover,
+.bounty-info-panel .take-bounty-button:hover {
+  background: var(--night) !important;
+  color: var(--white) !important;
+}
+
+/* ==========================================================
+   LIST A FIELD RECORD
+========================================================== */
+
+.sell-record-page {
+  min-height: 100vh;
+  background: var(--night);
+  color: var(--white);
+}
+
+.sell-record-layout {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  min-height: calc(100vh - 92px);
+}
+
+.sell-record-intro {
+  padding: 58px 46px;
+  border-right: 1px solid var(--light-line);
+  background:
+    linear-gradient(rgba(12,15,10,.83), rgba(12,15,10,.93)),
+    url("assets/visual-city-yellow.png") center / cover no-repeat;
+}
+
+.sell-record-intro h1,
+.collection-heading h1 {
+  margin: 25px 0 24px;
+  font-family: "Press Start 2P", system-ui;
+  font-size: clamp(42px, 4.4vw, 72px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -.05em;
+  color: var(--white);
+}
+
+.sell-record-intro p {
+  max-width: 520px;
+  color: rgba(245,245,239,.72);
+}
+
+.sell-principle {
+  margin-top: 34px;
+  display: grid;
+  gap: 8px;
+}
+
+.sell-principle span {
+  width: fit-content;
+  padding: 7px 9px;
+  border: 1px solid rgba(245,245,239,.30);
+  color: var(--lemon);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 6px;
+}
+
+.sell-record-form {
+  padding: 42px 46px 60px;
+  background: var(--white);
+  color: var(--night);
+}
+
+.sell-record-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.sell-record-form label > span {
+  color: rgba(12,15,10,.56);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 6px;
+  line-height: 1.5;
+}
+
+.sell-record-form input,
+.sell-record-form textarea,
+.sell-record-form select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 13px;
+  border: 1px solid rgba(12,15,10,.28);
+  border-radius: 0;
+  background: #fff;
+  color: var(--night);
+  font: inherit;
+}
+
+.sell-record-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.sell-record-form input:focus,
+.sell-record-form textarea:focus,
+.sell-record-form select:focus {
+  outline: 2px solid var(--rose);
+  outline-offset: 1px;
+}
+
+.record-upload-card {
+  position: relative;
+  min-height: 210px;
+  padding: 22px;
+  border: 2px dashed var(--night);
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--lemon);
+  cursor: pointer;
+}
+
+.record-upload-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.record-upload-card strong {
+  position: relative;
+  z-index: 2;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 9px;
+}
+
+.record-upload-card > span {
+  position: relative;
+  z-index: 2;
+  color: var(--night) !important;
+}
+
+.record-upload-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.record-upload-card img:not(.hidden) ~ strong,
+.record-upload-card img:not(.hidden) ~ span {
+  background: var(--white);
+}
+
+.list-record-button {
+  width: 100%;
+  min-height: 58px;
+  border: 2px solid var(--night);
+  background: var(--rose);
+  color: var(--night);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 7px;
+  cursor: pointer;
+}
+
+.list-record-button:hover {
+  background: var(--night);
+  color: var(--lemon);
+}
+
+#sellRecordMessage {
+  min-height: 20px;
+  margin-top: 13px;
+  color: var(--rose);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 6px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   ACQUISITION RECEIPT + PHYSICAL FIELD STAMP
+========================================================== */
+
+.acquired-wrap {
+  width: min(820px, calc(100vw - 40px));
+}
+
+.acquisition-receipt {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(245,245,239,.32);
+  border-left: 1px solid rgba(245,245,239,.32);
+}
+
+.acquisition-receipt > div {
+  min-height: 90px;
+  padding: 17px;
+  border-right: 1px solid rgba(245,245,239,.32);
+  border-bottom: 1px solid rgba(245,245,239,.32);
+}
+
+.acquisition-receipt span,
+.stamp-status span {
+  display: block;
+  color: var(--grey);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 6px;
+  line-height: 1.5;
+}
+
+.acquisition-receipt strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--lemon);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.stamp-status {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid rgba(245,245,239,.32);
+}
+
+.stamp-status strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--rose);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.stamp-steps {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.stamp-steps span {
+  padding: 9px 7px;
+  border: 1px solid rgba(245,245,239,.20);
+  text-align: center;
+}
+
+.stamp-steps span.active {
+  border-color: var(--lemon);
+  color: var(--lemon);
+}
+
+.complete-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.complete-actions button {
+  flex: 1;
+  min-height: 54px;
+}
+
+/* ==========================================================
+   MY COLLECTION
+========================================================== */
+
+.collection-page {
+  min-height: 100vh;
+  background: var(--night);
+  color: var(--white);
+}
+
+.collection-main {
+  padding: 52px 42px 70px;
+}
+
+.collection-heading {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 30px;
+  align-items: end;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--light-line);
+}
+
+.collection-heading .tiny-label {
+  grid-column: 1 / -1;
+}
+
+.collection-heading h1 {
+  margin: 0;
+}
+
+.collection-heading p {
+  margin: 0;
+  color: rgba(245,245,239,.60);
+  max-width: 520px;
+}
+
+.collection-empty {
+  margin-top: 30px;
+  padding: 34px;
+  border: 1px solid rgba(245,245,239,.24);
+  color: var(--grey);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 7px;
+}
+
+.collection-grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.collection-card {
+  border: 1px solid rgba(245,245,239,.26);
+  background: #111510;
+  overflow: hidden;
+}
+
+.collection-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.collection-card-copy {
+  padding: 15px;
+}
+
+.collection-card-top,
+.collection-card-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--grey);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 5px;
+  line-height: 1.5;
+}
+
+.collection-card h2 {
+  margin: 17px 0 10px;
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: .98;
+}
+
+.collection-card p {
+  margin: 0 0 18px;
+  color: rgba(245,245,239,.55);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.collection-card-foot {
+  padding-top: 12px;
+  border-top: 1px solid rgba(245,245,239,.14);
+}
+
+.collection-card-foot span:first-child {
+  color: var(--lemon);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+  .sell-record-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sell-record-intro {
+    border-right: 0;
+    border-bottom: 1px solid var(--light-line);
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .collection-heading {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-field,
+  .hero-market {
+    font-size: clamp(40px, 13vw, 66px) !important;
+  }
+
+  .sell-record-intro,
+  .sell-record-form,
+  .collection-main {
+    padding: 32px 18px 46px;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .acquisition-receipt {
+    grid-template-columns: 1fr;
+  }
+
+  .stamp-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .complete-actions {
+    flex-direction: column;
+  }
+}
+
+
+/* ==========================================================
+   V2 PATCH — HIGHER CONTRAST + CLEAR SHIPPING STEP
+========================================================== */
+
+.complete-page {
+  background: rgba(12, 15, 10, 0.96) !important;
+  color: var(--night) !important;
+}
+
+.complete-page > .acquired-wrap {
+  width: min(980px, 100%) !important;
+  padding: 34px 36px 30px !important;
+  background: var(--white) !important;
+  border: 2px solid var(--night) !important;
+  box-shadow: 14px 14px 0 var(--rose) !important;
+}
+
+.complete-label,
+.complete-page p {
+  color: var(--night) !important;
+}
+
+.complete-page h2 {
+  color: var(--night) !important;
+  line-height: 0.82 !important;
+  margin-bottom: 8px !important;
+}
+
+.acquisition-receipt span,
+.stamp-status span,
+.shipping-head span,
+.shipping-form label > span {
+  color: rgba(12,15,10,.65) !important;
+}
+
+.acquisition-receipt strong,
+.stamp-status strong,
+.shipping-head strong,
+.shipping-confirmation {
+  color: var(--night) !important;
+}
+
+.acquisition-receipt {
+  border-color: rgba(12,15,10,.16) !important;
+}
+
+.acquisition-receipt > div,
+.stamp-status,
+.shipping-next-step {
+  border-color: rgba(12,15,10,.16) !important;
+}
+
+.stamp-status strong {
+  font-size: 11px !important;
+}
+
+.stamp-steps span {
+  border: 1px solid rgba(12,15,10,.18) !important;
+  color: rgba(12,15,10,.5) !important;
+  background: transparent !important;
+}
+
+.stamp-steps span.active {
+  background: var(--night) !important;
+  border-color: var(--night) !important;
+  color: var(--white) !important;
+}
+
+.shipping-next-step {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid rgba(12,15,10,.16);
+}
+
+.shipping-head strong {
+  display: block;
+  margin-top: 8px;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 8px;
+  line-height: 1.7;
+}
+
+.shipping-form {
+  margin-top: 16px;
+}
+
+.shipping-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.shipping-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 13px;
+  border: 1px solid rgba(12,15,10,.22);
+  background: #fff;
+  color: var(--night);
+}
+
+.shipping-form input:focus {
+  outline: 2px solid var(--rose);
+  outline-offset: 1px;
+}
+
+.save-shipping-button {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 2px;
+  border: 2px solid var(--night);
+  background: var(--night);
+  color: var(--white);
+  cursor: pointer;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 7px;
+}
+
+.save-shipping-button:hover {
+  background: var(--rose);
+  color: var(--night);
+}
+
+.shipping-confirmation {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--night);
+  background: rgba(255, 36, 122, 0.08);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 6px;
+  line-height: 1.7;
+}
+
+.complete-actions button {
+  margin-top: 0 !important;
+  border: 2px solid var(--night) !important;
+  background: var(--night) !important;
+  color: var(--white) !important;
+}
+
+.complete-actions button:hover {
+  background: var(--rose) !important;
+  color: var(--night) !important;
+}
+
+/* bounty detail — higher contrast on white panel */
+.bounty-info-panel {
+  background: #ffffff !important;
+}
+
+.bounty-info-panel .product-topline,
+.bounty-info-panel .product-id,
+.bounty-task-list dt,
+.mission-step small,
+.proof-upload-label span,
+.review-head span,
+.requester-review p,
+.private-proof-preview span {
+  color: rgba(12,15,10,.72) !important;
+}
+
+.bounty-task-list dd,
+.bounty-info-panel h1,
+.bounty-reward strong,
+.mission-step strong,
+.review-head strong,
+.fulfilled-panel strong,
+.fulfilled-panel small {
+  color: var(--night) !important;
+}
+
+.proof-upload-label {
+  border-color: var(--night) !important;
+  background: #fff !important;
+}
+
+.proof-upload-label strong {
+  color: var(--night) !important;
+}
+
+.take-bounty-button,
+.flow-button,
+.submit-proof-button {
+  background: var(--night) !important;
+  color: var(--white) !important;
+  border-color: var(--night) !important;
+}
+
+.take-bounty-button:hover,
+.flow-button:hover,
+.submit-proof-button:hover,
+.approve-proof-button:hover {
+  background: var(--rose) !important;
+  color: var(--night) !important;
+}
+
+.approve-proof-button {
+  background: var(--rose) !important;
+  color: var(--night) !important;
+  border-color: var(--night) !important;
+}
+
+.submit-proof-button:disabled {
+  background: rgba(12,15,10,.16) !important;
+  color: rgba(12,15,10,.52) !important;
+  border-color: rgba(12,15,10,.16) !important;
+}
+
+.fulfilled-panel {
+  background: #fff !important;
+  border: 2px solid var(--night) !important;
+}
+
+.fulfilled-mark {
+  color: var(--rose) !important;
+}
+
+@media (max-width: 760px) {
+  .complete-page > .acquired-wrap {
+    padding: 22px 18px 18px !important;
+    box-shadow: 8px 8px 0 var(--rose) !important;
+  }
+
+  .shipping-head strong {
+    font-size: 7px;
+  }
+}
+
+/* ==========================================================
+   V3 FIX — PURCHASE RECEIPT MUST SCROLL
+   The receipt overlay can be taller than the viewport.
+========================================================== */
+
+.complete-page {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  place-items: start center !important;
+  -webkit-overflow-scrolling: touch;
+  padding: 28px 20px 44px !important;
+}
+
+.complete-page.show {
+  overflow-y: auto !important;
+}
+
+.complete-page > .acquired-wrap {
+  margin: 0 auto !important;
+  flex: none !important;
+}
+
+/* Keep the receipt dramatic, but leave enough room to reach shipping form. */
+.complete-page h2 {
+  font-size: clamp(68px, 10vw, 150px) !important;
+  line-height: .76 !important;
+}
+
+/* Make sure the lower form can never be clipped. */
+.shipping-next-step,
+.complete-actions {
+  position: relative;
+  z-index: 2;
+}
+
+.shipping-next-step {
+  display: block !important;
+}
+
+.shipping-form {
+  display: block !important;
+}
+
+@media (max-height: 850px) and (min-width: 761px) {
+  .complete-page {
+    padding-top: 18px !important;
+  }
+
+  .complete-page > .acquired-wrap {
+    padding-top: 24px !important;
+  }
+
+  .complete-page h2 {
+    font-size: clamp(60px, 8.2vw, 118px) !important;
+  }
+
+  .complete-page p {
+    margin-top: 20px !important;
+  }
+
+  .acquisition-receipt > div {
+    min-height: 72px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .complete-page {
+    padding: 14px 10px 34px !important;
+  }
+
+  .complete-page h2 {
+    font-size: clamp(50px, 15vw, 92px) !important;
+  }
 }

@@ -7,8 +7,8 @@
   <title>FIELD MARKET</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=discussion-input-fix">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=concept-final-v3">
 </head>
 
 <body>
@@ -58,21 +58,21 @@
           <button class="home-action" type="button" data-route="market">
             <span>01</span>
             <strong>LIVE MARKET</strong>
-            <small>BROWSE URBAN MOMENTS</small>
+            <small>FOUND / BROWSE + COLLECT RECORDS</small>
             <b>→</b>
           </button>
 
           <button class="home-action" type="button" data-route="bounties">
             <span>02</span>
             <strong>BOUNTIES</strong>
-            <small>BROWSE OPEN + COMPLETED TASKS</small>
+            <small>WANTED / REQUEST WHAT IS MISSING</small>
             <b>→</b>
           </button>
 
           <button class="home-action" type="button" data-route="postBounty">
             <span>03</span>
             <strong>POST A BOUNTY</strong>
-            <small>REQUEST A PHYSICAL TASK</small>
+            <small>COMMISSION A NEW FIELD RECORD</small>
             <b>→</b>
           </button>
 
@@ -134,12 +134,13 @@
 
       <div class="market-logo">
         <div>FIELD<br>MARKET<sup>®</sup></div>
-        <small>LIVE MARKET / NYC</small>
+        <small>FOUND RECORDS / FIELD NETWORK</small>
       </div>
 
       <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="sellRecord">LIST A RECORD +</button>
+        <button class="text-nav-button" type="button" data-route="collection">COLLECTION</button>
         <button class="text-nav-button" type="button" data-route="bounties">BOUNTIES</button>
-        <button class="text-nav-button" type="button" data-route="postBounty">POST</button>
         <button class="text-nav-button" type="button" data-route="discussion">DISCUSSION</button>
         <button class="cart-button" id="cartButton" type="button">
           CART <span id="cartCount">00</span>
@@ -160,7 +161,7 @@
 
       <div class="live-indicator">
         <span class="live-dot"></span>
-        <span id="activityText">LIVE MARKET — 12 FIELD RECORDS AVAILABLE</span>
+        <span id="activityText">FOUND / 12 CONTRIBUTED FIELD RECORDS AVAILABLE</span>
       </div>
     </section>
 
@@ -175,7 +176,8 @@
       <div class="focus-panel">
         <div class="focus-category" id="focusCategory">PLACE</div>
         <div class="focus-id" id="focusId">#0501</div>
-        <h2 class="focus-title" id="focusTitle">FLATIRON AFTER DARK</h2>
+        <h2 class="focus-title" id="focusTitle">FLATIRON / 8:42 PM</h2>
+        <div class="focus-contributor" id="focusContributor">CONTRIBUTED BY @NIGHTWALK</div>
 
         <div class="focus-meta">
           <span id="focusPrice">$22.00</span>
@@ -195,8 +197,8 @@
       </div>
 
       <div class="drop-description">
-        <strong>LIMITED FIELD RECORDS</strong>
-        <span>COLLECTED FROM PHYSICAL LIFE</span>
+        <strong>FOUND / CONTRIBUTED FIELD RECORDS</strong>
+        <span>CATALOGUED FROM PHYSICAL LIFE</span>
       </div>
     </section>
   </main>
@@ -228,7 +230,7 @@
     <div class="product-layout">
       <div class="product-image-panel">
         <img id="productImage" alt="Selected field record">
-        <div class="product-image-tag">PHYSICAL MOMENT / DIGITAL RECORD</div>
+        <div class="product-image-tag">CONTRIBUTED FIELD RECORD / PHYSICAL TRACE</div>
       </div>
 
       <div class="product-info-panel">
@@ -245,10 +247,11 @@
 
         <div class="product-edition-row">
           <span>FIELD RECORD</span>
-          <span>EDITION 1 / 1</span>
+          <span id="productEdition">EDITION 01 / 25</span>
         </div>
 
         <dl class="product-metadata">
+          <div><dt>CONTRIBUTED BY</dt><dd id="productContributor"></dd></div>
           <div><dt>LOCATION</dt><dd id="productLocation"></dd></div>
           <div><dt>TYPE</dt><dd id="productType"></dd></div>
           <div><dt>DATE</dt><dd id="productDate"></dd></div>
@@ -266,6 +269,114 @@
     </div>
   </section>
 
+
+
+  <!-- =====================================================
+       LIST A FIELD RECORD
+  ====================================================== -->
+
+  <section class="sell-record-page app-page hidden" id="sellRecordPage">
+    <header class="product-header">
+      <button class="back-button" type="button" data-route="market">
+        <span>←</span> LIVE MARKET
+      </button>
+
+      <div class="product-header-center">FIELD MARKET / CONTRIBUTOR MODE</div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="market">FOUND</button>
+        <button class="text-nav-button" type="button" data-route="bounties">WANTED</button>
+        <button class="text-nav-button" type="button" data-route="collection">COLLECTION</button>
+      </div>
+    </header>
+
+    <div class="sell-record-layout">
+      <div class="sell-record-intro">
+        <div class="tiny-label">FOUND / CONTRIBUTE TO THE MARKET</div>
+        <h1>LIST A<br>FIELD RECORD.</h1>
+
+        <p>
+          FIELD MARKET is not one photographer's store. Records are contributed
+          by people who encounter temporary places, traces, scenes, and events.
+        </p>
+
+        <div class="sell-principle">
+          <span>01 FIND</span>
+          <span>02 RECORD</span>
+          <span>03 CATALOGUE</span>
+          <span>04 PRICE</span>
+          <span>05 LIST</span>
+        </div>
+      </div>
+
+      <form class="sell-record-form" id="sellRecordForm">
+        <label class="record-upload-card" for="newRecordImage">
+          <span>UPLOAD FIELD IMAGE</span>
+          <strong>CHOOSE IMAGE +</strong>
+          <input id="newRecordImage" type="file" accept="image/*" required>
+          <img id="newRecordPreview" class="hidden" alt="New field record preview">
+        </label>
+
+        <div class="form-two-column">
+          <label>
+            <span>RECORD TITLE</span>
+            <input id="newRecordTitle" type="text" required placeholder="CORNER SURFACE / 6:20 PM">
+          </label>
+
+          <label>
+            <span>CONTRIBUTOR</span>
+            <input id="newRecordContributor" type="text" required placeholder="@YOURHANDLE">
+          </label>
+        </div>
+
+        <div class="form-two-column">
+          <label>
+            <span>LOCATION</span>
+            <input id="newRecordLocation" type="text" required placeholder="East Village, NYC">
+          </label>
+
+          <label>
+            <span>DATE / TIME</span>
+            <input id="newRecordDate" type="text" required placeholder="2026.10.13 / 18:20">
+          </label>
+        </div>
+
+        <div class="form-two-column">
+          <label>
+            <span>TYPE</span>
+            <select id="newRecordType" required>
+              <option value="TRACE">TRACE</option>
+              <option value="PLACE">PLACE</option>
+              <option value="SCENE">SCENE</option>
+              <option value="EVENT">EVENT</option>
+              <option value="OBJECT">OBJECT</option>
+            </select>
+          </label>
+
+          <label>
+            <span>PRICE</span>
+            <select id="newRecordPrice" required>
+              <option value="3">$3 — COMMON TRACE</option>
+              <option value="5" selected>$5 — FIELD RECORD</option>
+              <option value="7">$7 — TIME-SPECIFIC</option>
+              <option value="9">$9 — LIMITED / ONE-OFF</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span>FIELD NOTE</span>
+          <textarea id="newRecordNote" required placeholder="What made this moment worth recording?"></textarea>
+        </label>
+
+        <button class="list-record-button" type="submit">
+          LIST FIELD RECORD <span>→</span>
+        </button>
+
+        <div class="form-message" id="sellRecordMessage"></div>
+      </form>
+    </div>
+  </section>
 
   <!-- =====================================================
        BOUNTY BOARD
@@ -288,14 +399,14 @@
 
     <section class="bounty-hero">
       <div>
-        <div class="tiny-label">PHYSICAL TASKS / NYC + BEYOND</div>
-        <h1>GO THERE.<br>BRING BACK PROOF.</h1>
+        <div class="tiny-label">WANTED / PHYSICAL TASKS</div>
+        <h1>REQUEST WHAT<br>HAS NOT BEEN FOUND.</h1>
       </div>
 
       <div class="bounty-hero-copy">
         <p>
-          Browse requests at different stages: waiting for a runner, currently
-          being completed, waiting for approval, or already fulfilled.
+          A bounty commissions a new field record. A runner physically goes to the
+          requested place, completes the task, and returns with proof.
         </p>
 
         <div class="bounty-board-counts">
@@ -578,8 +689,12 @@
 
         <div class="form-two-column">
           <label>
-            <span>REWARD ($)</span>
-            <input id="newBountyReward" type="number" min="1" step="0.5" required placeholder="18">
+            <span>REWARD</span>
+            <select id="newBountyReward" required>
+              <option value="5">$5 — SIMPLE RECORD</option>
+              <option value="8" selected>$8 — SPECIFIC PLACE / TIME</option>
+              <option value="12">$12 — ACTION + PROOF</option>
+            </select>
           </label>
 
           <label>
@@ -647,6 +762,44 @@
   </section>
 
 
+
+  <!-- =====================================================
+       MY COLLECTION
+  ====================================================== -->
+
+  <section class="collection-page app-page hidden" id="collectionPage">
+    <header class="product-header">
+      <button class="back-button" type="button" data-route="market">
+        <span>←</span> LIVE MARKET
+      </button>
+
+      <div class="product-header-center">FIELD MARKET / MY COLLECTION</div>
+
+      <div class="header-actions">
+        <button class="text-nav-button" type="button" data-route="market">FOUND</button>
+        <button class="text-nav-button" type="button" data-route="sellRecord">LIST A RECORD +</button>
+        <button class="text-nav-button" type="button" data-route="bounties">WANTED</button>
+      </div>
+    </header>
+
+    <div class="collection-main">
+      <div class="collection-heading">
+        <div class="tiny-label">PERSONAL ARCHIVE / ACQUIRED TRACES</div>
+        <h1>MY FIELD<br>COLLECTION.</h1>
+        <p>
+          Purchased Field Records live here. Each acquisition is connected to a
+          numbered physical Field Stamp.
+        </p>
+      </div>
+
+      <div class="collection-empty" id="collectionEmpty">
+        NO FIELD RECORDS ACQUIRED YET.
+      </div>
+
+      <div class="collection-grid" id="collectionGrid"></div>
+    </div>
+  </section>
+
   <!-- =====================================================
        CART
   ====================================================== -->
@@ -696,12 +849,12 @@
 
       <div class="checkout-grid">
         <div><span>RECORDS</span><strong id="checkoutQuantity">0</strong></div>
-        <div><span>DELIVERY</span><strong>DIGITAL</strong></div>
+        <div><span>DELIVERY</span><strong>FIELD STAMP</strong></div>
         <div><span>TOTAL</span><strong id="checkoutTotal">$0.00</strong></div>
       </div>
 
       <p class="checkout-note">
-        Prototype transaction. Purchased field records are marked as sold.
+        Prototype transaction. The digital Field Record enters your collection and a numbered physical Field Stamp enters processing.
       </p>
 
       <button class="complete-purchase-button" id="completePurchaseButton" type="button">
@@ -716,14 +869,85 @@
   ====================================================== -->
 
   <section class="complete-page" id="completePage">
-    <div>
-      <div class="complete-label">FIELD MARKET / RECEIPT</div>
-      <h2>PURCHASE<br>COMPLETE.</h2>
-      <p id="completeText">YOUR FIELD RECORD HAS BEEN ADDED TO YOUR ARCHIVE.</p>
+    <div class="acquired-wrap">
+      <div class="complete-label">FIELD MARKET / ACQUISITION RECEIPT</div>
+      <h2>FIELD RECORD<br>ACQUIRED.</h2>
+      <p id="completeText">THE RECORD HAS BEEN ADDED TO YOUR COLLECTION.</p>
 
-      <button id="returnToMarket" type="button">
-        RETURN TO MARKET <span>→</span>
-      </button>
+      <div class="acquisition-receipt">
+        <div><span>RECORD</span><strong id="receiptRecordIds">#0501</strong></div>
+        <div><span>COLLECTOR</span><strong>YOU</strong></div>
+        <div><span>TOTAL</span><strong id="receiptTotal">$5.00</strong></div>
+        <div><span>PHYSICAL COLLECTIBLE</span><strong>FIELD STAMP</strong></div>
+      </div>
+
+      <div class="stamp-status">
+        <div>
+          <span>PHYSICAL DELIVERY</span>
+          <strong id="shippingStatusLabel">WAITING FOR MAILING INFO</strong>
+        </div>
+        <div class="stamp-steps">
+          <span class="active" id="mailStepPurchased">PURCHASED</span>
+          <span id="mailStepAddress">ADD ADDRESS</span>
+          <span id="mailStepPacking">PACKING</span>
+          <span id="mailStepMailed">MAILED</span>
+        </div>
+      </div>
+
+      <div class="shipping-next-step">
+        <div class="shipping-head">
+          <span>NEXT STEP / ENTER SHIPPING INFO</span>
+          <strong>TO MAIL THE FIELD STAMP, SAVE A NAME + MAILING ADDRESS.</strong>
+        </div>
+
+        <div class="shipping-form">
+          <div class="form-two-column">
+            <label>
+              <span>RECIPIENT NAME</span>
+              <input id="shippingName" type="text" placeholder="ROSE">
+            </label>
+
+            <label>
+              <span>EMAIL</span>
+              <input id="shippingEmail" type="email" placeholder="you@example.com">
+            </label>
+          </div>
+
+          <label>
+            <span>STREET ADDRESS</span>
+            <input id="shippingAddress" type="text" placeholder="123 5TH AVE APT 4B">
+          </label>
+
+          <div class="form-two-column">
+            <label>
+              <span>CITY</span>
+              <input id="shippingCity" type="text" placeholder="NEW YORK">
+            </label>
+
+            <label>
+              <span>ZIP CODE</span>
+              <input id="shippingZip" type="text" placeholder="10003">
+            </label>
+          </div>
+
+          <button class="save-shipping-button" id="saveShippingButton" type="button">
+            SAVE SHIPPING INFO →
+          </button>
+
+          <div class="shipping-confirmation hidden" id="shippingConfirmation">
+            ADDRESS SAVED. NEXT STEP: THE FIELD STAMP ENTERS PACKING, THEN IT WILL BE MAILED.
+          </div>
+        </div>
+      </div>
+
+      <div class="complete-actions">
+        <button id="viewCollectionButton" type="button">
+          VIEW MY COLLECTION <span>→</span>
+        </button>
+        <button id="returnToMarket" type="button">
+          RETURN TO MARKET <span>→</span>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -737,6 +961,6 @@
     <div class="transition-label" id="transitionLabel">LIVE MARKET</div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=concept-final-v2"></script>
 </body>
 </html>

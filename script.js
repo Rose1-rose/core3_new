@@ -11,159 +11,183 @@
 const marketItems = [
   {
     id: "#0501",
-    title: "FLATIRON AFTER DARK",
+    title: "FLATIRON / 8:42 PM",
     category: "PLACE",
     image: "assets/01.JPG",
-    price: 22,
+    price: 5,
+    contributor: "@nightwalk",
+    edition: "07 / 25",
     location: "Flatiron District",
     type: "Place / Landmark",
-    date: "2026.10.10",
+    date: "2026.10.10 / 20:42",
     context: "Night / Street",
     views: 184,
-    description: "A familiar New York landmark recorded after the city shifts into night."
+    description: "A contributed field record of a familiar landmark at one specific nighttime condition."
   },
   {
     id: "#0502",
-    title: "PARKING METER LAYERS",
+    title: "PARKING METER / STICKER LAYERS",
     category: "TRACE",
     image: "assets/02.JPG",
-    price: 14,
+    price: 3,
+    contributor: "@surface.log",
+    edition: "14 / 40",
     location: "New York City",
     type: "Sticker / Street Object",
-    date: "2026.10.10",
-    context: "Layered",
+    date: "2026.10.10 / 15:18",
+    context: "Layered / Temporary",
     views: 221,
-    description: "Stickers, tags, and residue accumulated on a working piece of street infrastructure."
+    description: "A temporary accumulation of stickers, tags, and residue on a working piece of street infrastructure."
   },
   {
     id: "#0503",
-    title: "HOUSE CLEANING",
+    title: "HOUSE CLEANING FLYER / 2ND AVE",
     category: "TRACE",
     image: "assets/03.JPG",
-    price: 11.5,
-    location: "New York City",
+    price: 3,
+    contributor: "@field88",
+    edition: "09 / 30",
+    location: "2nd Ave, NYC",
     type: "Flyer / Street Notice",
-    date: "2026.10.10",
-    context: "Temporary",
+    date: "2026.10.10 / 13:06",
+    context: "Temporary / Paper Trace",
     views: 143,
-    description: "A handwritten service notice attached to the street for a short period before being removed, covered, or torn away."
+    description: "A short-lived street notice catalogued before it could be removed, covered, or torn away."
   },
   {
     id: "#0504",
-    title: "STREET CORNER ARCHIVE",
+    title: "CORNER SURFACE / EAST VILLAGE",
     category: "TRACE",
     image: "assets/04.JPG",
-    price: 18,
-    location: "New York City",
+    price: 5,
+    contributor: "@mia_nyc",
+    edition: "11 / 25",
+    location: "East Village",
     type: "Sticker / Street Surface",
-    date: "2026.10.10",
+    date: "2026.10.10 / 16:22",
     context: "Accumulated",
     views: 205,
-    description: "A public surface built up through repeated stickers, marks, and small acts of visual occupation."
+    description: "A public surface formed through repeated stickers, marks, removal, and visual occupation."
   },
   {
     id: "#0505",
-    title: "PUBLIC MACHINE",
+    title: "PUBLIC MACHINE / STICKER TRACE",
     category: "OBJECT",
     image: "assets/05.JPG",
-    price: 16,
+    price: 5,
+    contributor: "@surface.log",
+    edition: "05 / 25",
     location: "New York City",
     type: "Street Object / Sticker",
-    date: "2026.10.10",
-    context: "Altered",
+    date: "2026.10.10 / 16:41",
+    context: "Altered / Public",
     views: 196,
-    description: "An everyday city machine transformed by years of stickers, tags, scratches, and public intervention."
+    description: "An everyday city machine catalogued after years of public intervention changed its surface."
   },
   {
     id: "#0506",
-    title: "NUBLU / AUGUST 22",
+    title: "NUBLU / AUG 22 / 11:34 PM",
     category: "EVENT",
     image: "assets/06.JPG",
-    price: 20,
+    price: 7,
+    contributor: "@mia_nyc",
+    edition: "03 / 20",
     location: "East Village",
-    type: "Music Poster / Street",
-    date: "2026.10.10",
-    context: "Music / Temporary",
+    type: "Music / Street Event Trace",
+    date: "2026.08.22 / 23:34",
+    context: "One Night / Temporary",
     views: 282,
-    description: "A music-event trace that connects a band, a date, and a neighborhood before the poster disappears from the street."
+    description: "A time-specific music trace connecting a venue, a night, and a neighborhood before the street surface changes."
   },
   {
     id: "#0507",
-    title: "STOREFRONT MEMORY",
+    title: "STOREFRONT / BEFORE CLOSING",
     category: "PLACE",
     image: "assets/07.JPG",
-    price: 19,
+    price: 5,
+    contributor: "@daniel",
+    edition: "12 / 25",
     location: "New York City",
     type: "Storefront / Neighborhood",
-    date: "2026.10.10",
-    context: "Everyday Place",
+    date: "2026.10.09 / 18:11",
+    context: "Everyday Place / Change",
     views: 173,
-    description: "A neighborhood storefront recorded as part of the everyday visual identity of its block."
+    description: "A neighborhood storefront recorded as a version of the block that may not remain the same."
   },
   {
     id: "#0508",
-    title: "EAST RIVER SUNSET",
+    title: "EAST RIVER / 6:41 PM",
     category: "SCENE",
     image: "assets/08.JPG",
-    price: 24,
+    price: 7,
+    contributor: "@riverwatch",
+    edition: "08 / 20",
     location: "East River",
     type: "Waterfront / Scene",
-    date: "2026.10.10",
-    context: "Sunset / Temporary Light",
+    date: "2026.10.10 / 18:41",
+    context: "Temporary Light",
     views: 316,
-    description: "A temporary relationship between light, skyline, water, and the people occupying the river edge."
+    description: "A field record tied to one temporary combination of light, skyline, water, and people at the river edge."
   },
   {
     id: "#0509",
-    title: "ONE NIGHT ONLY",
+    title: "LIVE PERFORMANCE / OCT 10",
     category: "EVENT",
     image: "assets/09.JPG",
-    price: 26,
+    price: 9,
+    contributor: "@one_night",
+    edition: "01 / 15",
     location: "New York City",
     type: "Live Performance",
-    date: "2026.10.10",
+    date: "2026.10.10 / 22:16",
     context: "One-Time Event",
     views: 342,
-    description: "A live performance captured from one specific position and one specific moment in the crowd."
+    description: "A one-time live event recorded from one physical position inside the crowd."
   },
   {
     id: "#0510",
-    title: "SIDEWALK MARKET",
+    title: "SIDEWALK MARKET / AFTERNOON",
     category: "SCENE",
     image: "assets/10.JPG",
-    price: 17,
+    price: 5,
+    contributor: "@streetindex",
+    edition: "16 / 30",
     location: "New York City",
     type: "Street Market / Scene",
-    date: "2026.10.10",
+    date: "2026.10.10 / 14:27",
     context: "Temporary Occupation",
     views: 198,
-    description: "An informal street market temporarily occupying the sidewalk and reshaping the normal use of the block."
+    description: "An informal market temporarily changing how a sidewalk is occupied and used."
   },
   {
     id: "#0511",
-    title: "EXHIBITION IN MOTION",
+    title: "GALLERY INSTALLATION / TEMPORARY",
     category: "OBJECT",
     image: "assets/11.JPG",
-    price: 21,
+    price: 7,
+    contributor: "@gallerywalk",
+    edition: "04 / 20",
     location: "New York City",
     type: "Installation / Exhibition",
-    date: "2026.10.10",
-    context: "Public Encounter",
+    date: "2026.10.10 / 17:03",
+    context: "Temporary Exhibition",
     views: 257,
-    description: "An artwork documented together with the people moving around it, preserving the work as an experienced event."
+    description: "A temporary installation catalogued together with the physical conditions in which it was encountered."
   },
   {
     id: "#0512",
-    title: "TIMES SQUARE / AFTERNOON",
+    title: "TIMES SQUARE / 3:18 PM",
     category: "SCENE",
     image: "assets/12.JPG",
-    price: 23,
+    price: 9,
+    contributor: "@lin24",
+    edition: "02 / 15",
     location: "Times Square",
     type: "Street Scene / Screens",
-    date: "2026.10.10",
-    context: "Crowd / Light / Traffic",
+    date: "2026.10.10 / 15:18",
+    context: "Crowd / Screens / Traffic",
     views: 391,
-    description: "A specific version of Times Square shaped by afternoon light, screens, crowds, and traffic at one moment."
+    description: "A time-specific Times Square record shaped by screens, crowds, traffic, and afternoon light."
   }
 ];
 
@@ -171,7 +195,7 @@ let bounties = [
   {
     id: "#B031",
     title: "TIMES SQUARE FAN CHECK-IN",
-    reward: 18,
+    reward: 12,
     where: "Times Square, NYC",
     when: "Completed",
     what: "Go to Times Square during the scheduled billboard display. Hold the requester’s fan ID or photo in front of the screen and take one clear photo.",
@@ -186,7 +210,7 @@ let bounties = [
   {
     id: "#B032",
     title: "MUSEUM T. REX ANGLE",
-    reward: 15,
+    reward: 8,
     where: "Natural History Museum, NYC",
     when: "Completed",
     what: "Visit the T. rex display and document it from the requested low-angle position.",
@@ -201,7 +225,7 @@ let bounties = [
   {
     id: "#B033",
     title: "RAINY STREET VERIFICATION",
-    reward: 12,
+    reward: 8,
     where: "New York State",
     when: "Completed",
     what: "Document the main street during rain to verify the requested weather condition and street atmosphere.",
@@ -216,7 +240,7 @@ let bounties = [
   {
     id: "#B034",
     title: "FIND THE TEMPORARY POSTER",
-    reward: 14,
+    reward: 5,
     where: "East Village, NYC",
     when: "Today / Before 8:00 PM",
     what: "Find the temporary poster described by the requester before it is removed or covered.",
@@ -230,7 +254,7 @@ let bounties = [
   {
     id: "#B035",
     title: "MIDNIGHT SCREEN DOCUMENT",
-    reward: 20,
+    reward: 12,
     where: "Times Square, NYC",
     when: "11:57 PM–12:00 AM",
     what: "Go to Times Square during the specified screen event and document the display while it is actually happening.",
@@ -244,7 +268,7 @@ let bounties = [
   {
     id: "#B036",
     title: "EAST RIVER SUNSET REVISIT",
-    reward: 16,
+    reward: 8,
     where: "East River, NYC",
     when: "Today / Before Sunset",
     what: "Return to the requested river location and document what the same view looks like at sunset today.",
@@ -261,6 +285,8 @@ let bounties = [
 const watched = new Set();
 const cart = new Set();
 const sold = new Set();
+const purchasedHistory = [];
+let pendingRecordImageData = "";
 
 let currentBountyFilter = "ALL";
 let selectedIndex = 0;
@@ -275,6 +301,8 @@ const pages = {
   bounties: document.querySelector("#bountyPage"),
   bountyDetail: document.querySelector("#bountyDetailPage"),
   postBounty: document.querySelector("#postBountyPage"),
+  sellRecord: document.querySelector("#sellRecordPage"),
+  collection: document.querySelector("#collectionPage"),
   discussion: document.querySelector("#discussionPage")
 };
 
@@ -296,6 +324,8 @@ const routeLabels = {
   bounties: "BOUNTY BOARD",
   bountyDetail: "BOUNTY DETAIL",
   postBounty: "POST A BOUNTY",
+  sellRecord: "LIST A FIELD RECORD",
+  collection: "MY COLLECTION",
   discussion: "LIVE DISCUSSION"
 };
 
@@ -310,6 +340,7 @@ function switchPageNow(name) {
 
   if (name === "market") renderCarousel();
   if (name === "bounties") renderBounties();
+  if (name === "collection") renderCollection();
   if (name === "discussion") renderDiscussion();
 }
 
@@ -366,14 +397,14 @@ $$("[data-route]").forEach(button => {
 
 const homeStatusPresets = {
   market: () => ({
-    kicker: "LIVE MARKET / CURRENT DROP",
+    kicker: "FOUND / CURRENT MARKET",
     live: "LIVE",
     number: String(marketItems.length).padStart(2, "0"),
-    title: "FIELD<br>RECORDS<br>AVAILABLE",
+    title: "FOUND<br>FIELD RECORDS<br>AVAILABLE",
     label: "FIELD RECORDS IN DROP",
     value: String(marketItems.length).padStart(2, "0"),
     footer: "FIELD MARKET / NYC",
-    edition: "COLLECT / ARCHIVE / ACQUIRE"
+    edition: "FOUND / COLLECT / ACQUIRE"
   }),
 
   bounties: () => {
@@ -383,7 +414,7 @@ const homeStatusPresets = {
     ).length;
 
     return {
-      kicker: "BOUNTY BOARD / LIVE STATUS",
+      kicker: "WANTED / BOUNTY STATUS",
       live: "UPDATED",
       number: String(open).padStart(2, "0"),
       title: "OPEN<br>BOUNTIES<br>NOW",
@@ -422,7 +453,7 @@ function getHomeDefaultPreset() {
     kicker: "FIELD STATUS",
     live: "LIVE",
     number: "12",
-    title: "FIELD<br>RECORDS<br>AVAILABLE",
+    title: "FOUND<br>FIELD RECORDS<br>AVAILABLE",
     label: "BOUNTY BOARD",
     value: String(bounties.length).padStart(2, "0"),
     footer: "FIELD MARKET / NYC",
@@ -482,8 +513,8 @@ $$(".home-action").forEach(button => {
 
 const stage = $("#stage");
 const ring = $("#ring");
-const total = marketItems.length;
-const step = 360 / total;
+let total = marketItems.length;
+let step = 360 / total;
 
 let cards = [];
 let rotation = 0;
@@ -498,6 +529,8 @@ let snapping = false;
 let snapTarget = 0;
 
 function buildCards() {
+  total = marketItems.length;
+  step = 360 / total;
   ring.innerHTML = "";
 
   const fragment = document.createDocumentFragment();
@@ -556,6 +589,7 @@ function updateSelectedUI() {
   $("#focusCategory").textContent = item.category;
   $("#focusId").textContent = item.id;
   $("#focusTitle").textContent = item.title;
+  $("#focusContributor").textContent = `CONTRIBUTED BY ${item.contributor || "@FIELD_NETWORK"}`;
   $("#focusPrice").textContent = sold.has(selectedIndex)
     ? "SOLD"
     : money(item.price);
@@ -735,6 +769,8 @@ function renderProduct() {
   $("#productTitle").textContent = item.title;
   $("#productPrice").textContent = money(item.price);
   $("#productDescription").textContent = item.description;
+  $("#productContributor").textContent = item.contributor || "@FIELD_NETWORK";
+  $("#productEdition").textContent = `EDITION ${item.edition || "01 / 25"}`;
 
   $("#productLocation").textContent = item.location;
   $("#productType").textContent = item.type;
@@ -743,7 +779,7 @@ function renderProduct() {
   $("#productViews").textContent = item.views;
 
   $("#productStatus").textContent = isSold ? "SOLD" : "AVAILABLE";
-  $("#productStatus").style.color = isSold ? "var(--rose)" : "var(--lemon)";
+  $("#productStatus").style.color = isSold ? "var(--rose)" : "var(--night)";
 
   $("#watchButton").textContent = isWatched ? "WATCHING" : "WATCH";
   $("#watchButton").classList.toggle("active", isWatched);
@@ -893,7 +929,17 @@ $("#checkoutBack").addEventListener("click", () => {
 
 $("#completePurchaseButton").addEventListener("click", () => {
   const purchased = Array.from(cart);
+  const purchaseTotal = purchased.reduce(
+    (sum, index) => sum + marketItems[index].price,
+    0
+  );
 
+  const acquiredRecords = purchased.map(index => ({
+    ...marketItems[index],
+    acquiredAt: new Date().toISOString()
+  }));
+
+  purchasedHistory.push(...acquiredRecords);
   purchased.forEach(index => sold.add(index));
   cart.clear();
 
@@ -907,17 +953,205 @@ $("#completePurchaseButton").addEventListener("click", () => {
 
   $("#checkoutPage").classList.remove("show");
 
+
   $("#completeText").textContent =
     purchased.length === 1
-      ? "YOUR FIELD RECORD HAS BEEN ADDED TO YOUR ARCHIVE."
-      : `${purchased.length} FIELD RECORDS HAVE BEEN ADDED TO YOUR ARCHIVE.`;
+      ? "THE FIELD RECORD HAS BEEN ADDED TO YOUR COLLECTION."
+      : `${purchased.length} FIELD RECORDS HAVE BEEN ADDED TO YOUR COLLECTION.`;
+
+  $("#receiptRecordIds").textContent = acquiredRecords
+    .map(record => record.id)
+    .join(" / ");
+  $("#receiptTotal").textContent = money(purchaseTotal);
+
+  const shippingFields = ["shippingName", "shippingEmail", "shippingAddress", "shippingCity", "shippingZip"];
+  shippingFields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = "";
+  });
+
+  $("#shippingStatusLabel").textContent = "WAITING FOR MAILING INFO";
+  $("#shippingConfirmation").classList.add("hidden");
+  $("#mailStepPurchased").classList.add("active");
+  $("#mailStepAddress").classList.remove("active");
+  $("#mailStepPacking").classList.remove("active");
+  $("#mailStepMailed").classList.remove("active");
 
   $("#completePage").classList.add("show");
+
 });
 
 $("#returnToMarket").addEventListener("click", () => {
   $("#completePage").classList.remove("show");
   showPage("market");
+});
+
+$("#viewCollectionButton").addEventListener("click", () => {
+  $("#completePage").classList.remove("show");
+  showPage("collection");
+});
+
+$("#saveShippingButton").addEventListener("click", () => {
+  const required = [
+    $("#shippingName"),
+    $("#shippingAddress"),
+    $("#shippingCity"),
+    $("#shippingZip")
+  ];
+
+  const hasEmpty = required.some(field => !field.value.trim());
+
+  if (hasEmpty) {
+    $("#shippingConfirmation").classList.remove("hidden");
+    $("#shippingConfirmation").textContent =
+      "PLEASE COMPLETE NAME, ADDRESS, CITY, AND ZIP BEFORE CONTINUING.";
+    $("#shippingStatusLabel").textContent = "WAITING FOR MAILING INFO";
+    $("#mailStepAddress").classList.remove("active");
+    $("#mailStepPacking").classList.remove("active");
+    return;
+  }
+
+  $("#shippingStatusLabel").textContent = "ADDRESS RECEIVED / READY FOR PACKING";
+  $("#shippingConfirmation").classList.remove("hidden");
+  $("#shippingConfirmation").textContent =
+    "ADDRESS SAVED. NEXT STEP: THE FIELD STAMP ENTERS PACKING, THEN IT WILL BE MAILED.";
+
+  $("#mailStepPurchased").classList.add("active");
+  $("#mailStepAddress").classList.add("active");
+  $("#mailStepPacking").classList.remove("active");
+  $("#mailStepMailed").classList.remove("active");
+});
+
+
+
+/* =====================================================
+   MY COLLECTION
+===================================================== */
+
+function renderCollection() {
+  const grid = $("#collectionGrid");
+  const empty = $("#collectionEmpty");
+
+  if (!grid || !empty) return;
+
+  grid.innerHTML = "";
+  empty.classList.toggle("hidden", purchasedHistory.length > 0);
+
+  purchasedHistory.forEach(record => {
+    const card = document.createElement("article");
+    card.className = "collection-card";
+
+    card.innerHTML = `
+      <img src="${record.image}" alt="${record.title}">
+      <div class="collection-card-copy">
+        <div class="collection-card-top">
+          <span>${record.id}</span>
+          <span>FIELD STAMP / PROCESSING</span>
+        </div>
+        <h2>${record.title}</h2>
+        <p>${record.location} / CONTRIBUTED BY ${record.contributor}</p>
+        <div class="collection-card-foot">
+          <span>${money(record.price)}</span>
+          <span>EDITION ${record.edition || "01 / 25"}</span>
+        </div>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+/* =====================================================
+   LIST A FIELD RECORD / CONTRIBUTOR FLOW
+===================================================== */
+
+$("#newRecordImage").addEventListener("change", event => {
+  const file = event.target.files?.[0];
+  const preview = $("#newRecordPreview");
+
+  pendingRecordImageData = "";
+  preview.classList.add("hidden");
+  preview.removeAttribute("src");
+
+  if (!file || !file.type.startsWith("image/")) return;
+
+  const reader = new FileReader();
+
+  reader.addEventListener("load", () => {
+    pendingRecordImageData = reader.result;
+    preview.src = pendingRecordImageData;
+    preview.classList.remove("hidden");
+  });
+
+  reader.readAsDataURL(file);
+});
+
+$("#sellRecordForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!pendingRecordImageData) {
+    $("#sellRecordMessage").textContent = "UPLOAD AN IMAGE BEFORE LISTING.";
+    return;
+  }
+
+  const contributorRaw = $("#newRecordContributor").value.trim();
+  const contributor = contributorRaw.startsWith("@")
+    ? contributorRaw
+    : `@${contributorRaw}`;
+
+  const newNumber = 501 + marketItems.length;
+
+  const record = {
+    id: `#${String(newNumber).padStart(4, "0")}`,
+    title: $("#newRecordTitle").value.trim().toUpperCase(),
+    category: $("#newRecordType").value,
+    image: pendingRecordImageData,
+    price: Number($("#newRecordPrice").value),
+    contributor,
+    edition: "01 / 25",
+    location: $("#newRecordLocation").value.trim(),
+    type: `${$("#newRecordType").value} / USER CONTRIBUTION`,
+    date: $("#newRecordDate").value.trim(),
+    context: "CONTRIBUTED / FIELD NETWORK",
+    views: 0,
+    description: $("#newRecordNote").value.trim()
+  };
+
+  marketItems.push(record);
+
+  total = marketItems.length;
+  step = 360 / total;
+  cards = [];
+  buildCards();
+
+  selectedIndex = marketItems.length - 1;
+  previousSelectedIndex = -1;
+  rotation = -selectedIndex * step;
+  velocity = 0;
+  snapping = false;
+
+  $("#activityText").textContent =
+    `FOUND / ${marketItems.length - sold.size} CONTRIBUTED FIELD RECORDS AVAILABLE`;
+
+  addDiscussionMessage({
+    user: contributor.replace("@", ""),
+    linkText: record.id,
+    linkType: "market",
+    linkIndex: selectedIndex,
+    text: `${record.title} was contributed to the live market.`
+  });
+
+  $("#sellRecordMessage").textContent =
+    `${record.id} LISTED / CONTRIBUTED BY ${contributor.toUpperCase()}`;
+
+  event.target.reset();
+  pendingRecordImageData = "";
+  $("#newRecordPreview").classList.add("hidden");
+  $("#newRecordPreview").removeAttribute("src");
+
+  setTimeout(() => {
+    showProductPage(selectedIndex);
+  }, 450);
 });
 
 /* =====================================================
@@ -1108,9 +1342,7 @@ function renderBountyDetail() {
   $("#bountyDetailStatus").style.color =
     bounty.status === "FULFILLED"
       ? "var(--rose)"
-      : bounty.status === "OPEN"
-        ? "var(--lemon)"
-        : "var(--white)";
+      : "var(--night)";
 
   $("#bountyRoleLabel").textContent =
     bounty.owner === "YOU"
@@ -1260,7 +1492,7 @@ $("#submitProofButton").addEventListener("click", () => {
   bounty.missionStage = 4;
 
   if (pendingProofDataUrl) {
-    bounty.proofImage = pendingProofDataUrl;
+    bounty.pendingProofImage = pendingProofDataUrl;
   }
 
   addDiscussionMessage({
